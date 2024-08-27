@@ -67,3 +67,21 @@ nav a:hover {
     color: #fff;
     display: none;
 }
+
+
+/* media query for small devices like phones */
+@media (max-width:320px) {
+
+}
+
+
+/* media query for small devices like phones */
+@media (min-width:321px) and (max-width:768px) {
+
+}
+
+
+/* media query for desktops */
+@media (min-width:769px) {
+
+}
