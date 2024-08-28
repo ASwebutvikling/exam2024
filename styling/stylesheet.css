@@ -17,6 +17,11 @@ img {
     margin: 0;
 }
 
+li {
+    list-style: none;
+}
+
+/* general styling of navbar */
 nav {
     height: 80px;
     width: 100%;
@@ -25,20 +30,42 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    margin: 0;
     position: fixed;
 }
 
+/* This is for the burgermenu, we don't wish for the checkbox to be visible, and the toggle is invisible on larger devices */
+nav input {
+    display: none;
+}
+
+nav input, .burger {
+}
+
+
+/* placing the menu toggle in correct position */
+.burger {
+    width: 20px;
+    color: #fff;
+    padding: 0;
+    margin: 0 2rem 0 auto;
+}
+
+/* Placing the logo in a fitting position, height set to 100% so that any image inside will fit the 80px height of the navbar */
 .logo {
     height: 100%;
-    margin-left: 2rem;
+    margin: 0 auto 0 2rem;
     padding: 0;
 }
 
+
+/* Making the logo white */
 .logo img {
     filter: brightness(0) invert(1);
     height: 100%;
 }
 
+/*  */
 .nav-items {
     margin-right: 2rem;
     display: flex;
@@ -46,7 +73,10 @@ nav {
     gap: 2rem;
 }
 
+
 nav a {
+    font-weight: 500;
+    text-transform: uppercase;
     font-size: 1.2rem;
     text-decoration: underline rgba(255, 255, 255, 0);
     color: #fff;
@@ -54,34 +84,47 @@ nav a {
 
 }
 
+
+/* navbar outline for current page */
 .pointer {
     text-decoration: underline rgba(255, 255, 255, 1);
 }
 
+/* navbar outline when link is hovered */
 nav a:hover {
     text-decoration: underline rgba(255, 255, 255, 1);
 }
 
-.nav-items span {
-    cursor: pointer;
-    color: #fff;
-    display: none;
+
+/* media query for small devices like phones and smaller tablets */
+@media (max-width:768px){
+
+    nav menu {
+        height: 450px;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100vw;
+        transition: 0.2sec;
+        background-color: pink;
+    }
+
+    .nav-items {
+        width: 100%;
+        font-size: 3rem;
+        flex-direction: column;
+    }
+
 }
 
 
 /* media query for small devices like phones */
-@media (max-width:320px) {
-
-}
-
-
-/* media query for small devices like phones */
-@media (min-width:321px) and (max-width:768px) {
+@media (min-width:769px) and (max-width:1024px) {
 
 }
 
 
 /* media query for desktops */
-@media (min-width:769px) {
+@media (min-width:1025px) {
 
 }
