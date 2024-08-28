@@ -23,7 +23,7 @@ li {
 
 /* general styling of navbar */
 nav {
-    height: 80px;
+    height: 90px;
     width: 100%;
     display: flex;
     background-color: rgb(51, 50, 52);
@@ -34,12 +34,9 @@ nav {
     position: fixed;
 }
 
-/* This is for the burgermenu, we don't wish for the checkbox to be visible, and the toggle is invisible on larger devices */
-nav input {
-    display: none;
-}
-
+/* This is for the burgermenu, we don't want the checkbox to be visible, and the toggle is invisible on larger devices */
 nav input, .burger {
+    display: none;
 }
 
 
@@ -49,6 +46,12 @@ nav input, .burger {
     color: #fff;
     padding: 0;
     margin: 0 2rem 0 auto;
+}
+
+/* styling burger menu toggle */
+.burger span {
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 /* Placing the logo in a fitting position, height set to 100% so that any image inside will fit the 80px height of the navbar */
@@ -65,7 +68,7 @@ nav input, .burger {
     height: 100%;
 }
 
-/*  */
+/* Aligning nav links */
 .nav-items {
     margin-right: 2rem;
     display: flex;
@@ -74,7 +77,8 @@ nav input, .burger {
 }
 
 
-nav a {
+/* styling the nav-links, added a small transition */
+nav menu a {
     font-weight: 500;
     text-transform: uppercase;
     font-size: 1.2rem;
@@ -91,7 +95,7 @@ nav a {
 }
 
 /* navbar outline when link is hovered */
-nav a:hover {
+nav menu a:hover {
     text-decoration: underline rgba(255, 255, 255, 1);
 }
 
@@ -99,20 +103,40 @@ nav a:hover {
 /* media query for small devices like phones and smaller tablets */
 @media (max-width:768px){
 
+    /* styling dropdown navbar menu. The menu is invisible when the toggle is unclicked */
     nav menu {
         height: 450px;
         position: absolute;
-        top: 80px;
+        top: 90px;
+        display: none;
         left: 0;
         width: 100vw;
-        transition: 0.2sec;
-        background-color: pink;
+        background-color: rgb(51, 50, 52);;
     }
 
+    /* Adjusting link sizing */
+    nav menu a {
+        font-size: 2rem;
+    }
+
+    /* justifying links for the dropdown navbar */
     .nav-items {
+        height: 100%;
         width: 100%;
-        font-size: 3rem;
         flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+        margin-left: 2rem;
+    }
+
+    /* display toggle*/
+    .burger {
+        display: block;
+    }
+
+    /* when toggle is cliked nav links appear */
+    #burger-toggle:checked ~ .nav-items-wrapper {
+        display: block;
     }
 
 }
