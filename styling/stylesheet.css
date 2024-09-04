@@ -13,6 +13,11 @@
     font-family: "Roboto", sans-serif;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 
 img {
     margin: 0;
@@ -20,13 +25,6 @@ img {
 
 li {
     list-style: none;
-}
-
-header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 /* general styling of navbar */
@@ -40,7 +38,6 @@ nav {
     align-items: center;
     padding: 10px;
     margin: 0;
-    position: fixed;
 }
 
 /* This is for the burgermenu, we don't want the checkbox to be visible, and the toggle is invisible on larger devices */
@@ -108,12 +105,13 @@ nav menu a:hover {
     text-decoration: underline rgba(255, 255, 255, 1);
 }
 
-.header-main {
-    margin-top: 90px;
+main {
     width: 80%;
+    margin: 0 auto;
 }
 
-.header-main iframe{
+video {
+    width: 100%;
 }
 
 
@@ -127,7 +125,7 @@ nav menu a:hover {
         top: 90px;
         display: none;
         left: 0;
-        width: 100%;
+        width: 100vw;
         background-color: rgb(51, 50, 52);;
     }
 
