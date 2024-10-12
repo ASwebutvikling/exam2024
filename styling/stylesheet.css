@@ -84,7 +84,7 @@ nav input, .burger {
 
 
 /* styling the nav-links, added a small transition */
-nav menu a {
+.nav-items-wrapper a {
     font-weight: 500;
     text-transform: uppercase;
     font-size: 1.2rem;
@@ -101,7 +101,7 @@ nav menu a {
 }
 
 /* navbar outline when link is hovered */
-nav menu a:hover {
+.nav-items-wrapper a:hover {
     text-decoration: underline rgba(255, 255, 255, 1);
 }
 
@@ -119,7 +119,7 @@ video {
 @media (max-width:768px){
 
     /* styling dropdown navbar menu. The menu is invisible when the toggle is unclicked */
-    nav menu {
+    .nav-items-wrapper {
         height: 450px;
         position: absolute;
         top: 90px;
@@ -130,7 +130,7 @@ video {
     }
 
     /* Adjusting link sizing */
-    nav menu a {
+    .nav-items-wrapper a {
         font-size: 2rem;
     }
 
