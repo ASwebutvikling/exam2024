@@ -160,4 +160,13 @@ video {
 }
 
 
-/* media query for sm
+/* media query for small devices like phones */
+@media (min-width:769px) and (max-width:1024px) {
+
+}
+
+
+/* media query for desktops */
+@media (min-width:1025px) {
+
+}
