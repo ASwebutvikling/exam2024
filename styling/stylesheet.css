@@ -46,8 +46,11 @@ nav input, .burger {
 }
 
 
-/* placing the menu toggle in correct position */
+/* placing the menu toggle in correct position, removing html button styling*/
 .burger {
+    border: none;
+    background-color: transparent;
+    border-radius: 0;
     width: 20px;
     color: #fff;
     padding: 0;
@@ -157,13 +160,4 @@ video {
 }
 
 
-/* media query for small devices like phones */
-@media (min-width:769px) and (max-width:1024px) {
-
-}
-
-
-/* media query for desktops */
-@media (min-width:1025px) {
-
-}
+/* media query for sm
