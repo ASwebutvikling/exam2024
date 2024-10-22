@@ -11,6 +11,13 @@
 
 :root {
     font-family: "Roboto", sans-serif;
+    --main-light: rgb(162,167,174);
+    --main-normal: rgb(48,60,74);
+    --main-dark: rgb(17,21,19);
+    --activity-light: rgb(240,235,231);
+    --activity-normal: rgb(100,57,17);
+    --activity-dark : rgb(75,43,13);
+    --activity-darker: rgb(35,20,6);
 }
 
 body {
