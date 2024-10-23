@@ -254,6 +254,12 @@ video {
     line-height: 1.5;
 }
 
+.studie-oppbygning {
+    display: flex;
+    flex-direction: column;
+    
+}
+
 #forsteaar:target, #andreaar:target, #tredjeaar:target {
     display: block;
 }
@@ -339,7 +345,7 @@ video {
 
 
 /* media query for small devices like phones */
-@media (min-width:48.1em) and (max-width:64em) {
+@media (min-width:48.1em) and (max-width:63em) {
     .video-container {
         display: flex;
         flex-direction: column;
