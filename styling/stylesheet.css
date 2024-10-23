@@ -41,10 +41,21 @@ h2 {
 h3 {
     font-size: 2rem;
 }
+
 p {
     font-size: 1rem;
 }
 
+button{
+    background-color: var(--main-light);
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--main-dark);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    display: inline-block;
+}
 
 img {
     margin: 0;
@@ -257,7 +268,7 @@ video {
 .studie-oppbygning {
     display: flex;
     flex-direction: column;
-    
+
 }
 
 #forsteaar:target, #andreaar:target, #tredjeaar:target {
