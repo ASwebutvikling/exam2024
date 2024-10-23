@@ -162,34 +162,3 @@ video {
 
     /* justifying links for the dropdown navbar */
     .nav-items {
-        height: 100%;
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        gap: 3rem;
-        margin-left: 2rem;
-    }
-
-    /* display toggle*/
-    .burger {
-        display: block;
-    }
-
-    /* when toggle is cliked nav links appear */
-    #burger-toggle:checked ~ .nav-items-wrapper {
-        display: block;
-    }
-
-}
-
-
-/* media query for small devices like phones */
-@media (min-width:769px) and (max-width:1024px) {
-
-}
-
-
-/* media query for desktops */
-@media (min-width:1025px) {
-
-}
