@@ -75,6 +75,10 @@ li {
     list-style: none;
 }
 
+section {
+    padding: 2rem;
+}
+
 /* general styling of navbar */
 nav {
     /*position: fixed;*/
@@ -166,40 +170,30 @@ main {
     margin: 0 auto;
 }
 
-.video-container {
+.header-container, .video-container {
+    background-color: var(--main-light);
     margin-top: 3rem;
-    border-radius: 1.5rem;
     width: 100%;
+    color: var(--main-darker);
+    font-size: 2rem;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+    align-items: center;
+}
+
+.video-container {
     display: grid;
     grid-template-rows: 1fr 3fr;
-    grid-template-columns: 3fr 3fr;
-    grid-template-areas: 
-    'heading heading'
-    'article figure';
-    /*display: flex;
-    flex-direction: column;
-    justify-items: center;
-    justify-content: space-between;
-    gap: 2rem;*/
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
-    font-size: 2rem;
-    background-color: var(--main-light);
-    color: var(--main-darker);
+    grid-template-columns: repeat(2, 1fr);
 }
+
 .video-container h1 {
-    font-size: 3rem;
-    grid-area: heading;
+    grid-column: span 2;
 }
 
 .video-container p {
     font-size: 3rem;
-    grid-area: article;
-}
-
-.video-container figure {
-    grid-area: figure;
 }
 
 video {
@@ -286,7 +280,6 @@ video {
     justify-content: space-between;
     gap: 2rem;
     color: var(--main-dark);
-    padding: 2rem;
     align-items: center;
     justify-items: center;
 
