@@ -42,19 +42,29 @@ h3 {
     font-size: 2rem;
 }
 
+h4 {
+    font-size: 2rem;
+}
+
 p {
-    font-size: 1rem;
+    font-size: 1.5rem;
+}
+
+a {
+    text-decoration: none;
 }
 
 button{
-    background-color: var(--main-light);
+    background-color: var(--main-dark);
     text-decoration: none;
     font-size: 1rem;
-    color: var(--main-dark);
-    padding: 2rem;
+    color: var(--main-light);
+    padding: 1rem;
     border-radius: 1.5rem;
+    border: none;
     cursor: pointer;
     display: inline-block;
+    width: 100%;
 }
 
 img {
@@ -67,6 +77,7 @@ li {
 
 /* general styling of navbar */
 nav {
+    /*position: fixed;*/
     z-index: 1000;
     height: 5.5rem;
     width: 100%;
@@ -244,7 +255,7 @@ video {
     padding: 2rem;
     border-radius: 1.5rem;
     background-color: var(--main-normal);
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .info-box {
@@ -266,22 +277,113 @@ video {
 }
 
 .studie-oppbygning {
+    margin-top: 2rem;
+    background-color: var(--main-light);
+    border-radius: 1.5rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    color: var(--main-dark);
+    padding: 2rem;
+    align-items: center;
+    justify-items: center;
 
+}
+
+.studieaar {
+    /*background-color: blueviolet;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 100%;
+}
+
+.semester {
+    padding: 1rem;
+}
+
+.semester:not(:last-child) {
+    border-bottom: solid;
+    margin-bottom: 1rem;
+}
+
+.studieaar h3 {
+    background-color: aqua;
+    width: max-content;
+}
+
+.button-group {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+}
+.emnegruppe {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    margin: auto;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.emne {
+    border-top: solid;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*background-color: pink;*/
+}
+
+.emne a {
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--main-dark);
+    text-decoration:  underline var(--main-light) ;
+    transition: text-decoration-color 400ms ease-in-out;
+    padding: auto;
+}
+
+.emne a:hover{
+    text-decoration: underline var(--main-darker);
 }
 
 #forsteaar:target, #andreaar:target, #tredjeaar:target {
     display: block;
 }
 
-#forsteaar {
+#forsteaar, #andreaar, #tredjeaar  {
     display: none;
 }
-#andreaar {
+
+.semester input {
+}
+
+.semester label {
+    cursor: pointer;
+}
+
+#MOF3:checked ~ .emnegruppeMOF3,
+#SODM3:checked ~ .emnegruppeSODM3,
+#VB3:checked ~ .emnegruppeSODM3 {
+    display: block;
+}
+.emnegruppeMOF3,
+.emnegruppeSODM3 {
     display: none;
 }
-#tredjeaar {
+
+#MOF3:target, #MOF4:target, #MOF5:target, #MOF6:target, 
+#SODM3:target, #SODM4:target, #SODM5:target, #SODM6:target, 
+#VB4:target, #VB5:target, #VB6:target {
+    display: block;
+}
+
+#MOF3, #MOF4, #MOF5, #MOF6, #SODM3, #SODM4, #SODM5, #SODM6, #VB4, #VB5, #VB6 {
     display: none;
 }
 

@@ -152,12 +152,12 @@
         <section class="studie-oppbygning">
             <h2>Studiets oppbygning</h2>
             <div class="button-group">
-                <a href="#forsteaar"><button>1 år</button></a>
-                <a href="#andreaar"><button>2 år</button></a>
-                <a href="#tredjeaar"><button>3 år</button>r</a>
+                <a href="#forsteaar"><button>1. studieår</button></a>
+                <a href="#andreaar"><button>2. studieår</button></a>
+                <a href="#tredjeaar"><button>3. studieår</button></a>
+                <p>Valfritt emne<span class="material-symbols-outlined">check</span></p>
             </div>
-            <p>Valfritt emne</p><span class="material-symbols-outlined">check</span>
-            <section class="studieaar" id="forsteaar">
+            <section class="studieaar" id="forsteaar" class="forsteaar">
                 <h3>1. Studieår</h3>
                 <section class="semester">
                     <h4>1. Semester</h4>
@@ -201,12 +201,24 @@
     
             <section class="studieaar" id="andreaar">
                 <h3>2. Studieår</h3>
-                <a href="/">Emnegruppe: Matematikk og fysikk</a>
-                <a href="/">Emnegruppe: Statistiske og datadrevne metoder</a>
-                <a href="/">Emnegruppe: Vitenskapelige beregninger</a>
                 <section class="semester">
                     <h4>3. Semester</h4>
-                    <div class="emnegruppe">
+                    <!--<a href="#MOF3">Matematikk og fysikk</a>
+                    <a href="#SODM3">Statistiske og datadrevne metoder</a>
+                    <a href="#SODM3">Vitenskapelige beregninger</a>-->
+                    <input type="checkbox" id="MOF3">
+                    <a aria-label="Toggle navigation">
+                        <label for="MOF3">Matematikk og fysikk</label>
+                    </a>
+                    <input type="checkbox" id="SODM3">
+                    <a aria-label="Toggle navigation">
+                        <label for="SODM3">Statistiske og datadrevne metoder</label>
+                    </a>
+                    <input type="checkbox" id="VB3">
+                    <a aria-label="Toggle navigation">
+                        <label for="VB3">Vitenskapelige beregninger</label>
+                    </a>
+                    <div class="emnegruppe" class="emnegruppeMOF3">
                         <div class="emne">
                             <a href="/">Matematikk 2000 med statistikk</a>
                             <p>DAPE2000</p><span>10 stp.</span>
@@ -219,6 +231,16 @@
                             <a href="/">Lineær algebra og introduksjon til gruppeteori</a>
                             <p>MAMO2300</p><span>10 stp.</span>
                         </div>
+                    </div>
+                    <div class="emnegruppe" class="emnegruppeSODM3">
+                        <div class="emne">
+                            <a href="/">Matematikk 2000 med statistikk</a>
+                            <p>DAPE2000</p><span>10 stp.</span>
+                        </div>
+                        <div class="emne">
+                            <a href="/">Moderne fysikk</a>
+                            <p>MAMO2100</p><span>10 stp.</span>
+                        </div>
                         <div class="emne">
                             <a href="/">Algoritmer og datastrukturer</a>
                             <p>DATS2300</p><span>10 stp.</span>
@@ -227,7 +249,24 @@
                 </section>
                 <section class="semester">
                     <h4>4. Semester</h4>
+                    <a href="#MOF4">Matematikk og fysikk</a>
+                    <a href="#SODM4">Statistiske og datadrevne metoder</a>
+                    <a href="#SODM4">Vitenskapelige beregninger</a>
                     <div class="emnegruppe">
+                        <div class="emne" id="VB4">
+                            <a href="/">Matematikk 4000</a>
+                            <p>DAVE3705</p><span>10 stp.</span>
+                        </div>
+                        <div class="emne">
+                            <a href="/">Ressurseffektive programmer</a>
+                            <p>DAVE3606</p><span>10 stp.</span>
+                        </div>
+                        <div class="emne">
+                            <a href="/">Avansert modellering og beregninger</a>
+                            <p>MAMO2200</p><span>10 stp.</span>
+                        </div>
+                    </div>
+                    <div class="emnegruppe" id="SODM4">
                         <div class="emne">
                             <a href="/">Matematikk 4000</a>
                             <p>DAVE3705</p><span>10 stp.</span>
@@ -239,6 +278,12 @@
                         <div class="emne">
                             <a href="/">Symmetrier og algebraiske strukturer</a>
                             <p>MAMO2500</p><span>10 stp.</span>
+                        </div>
+                    </div>
+                    <div class="emnegruppe" id="MOF4">
+                        <div class="emne">
+                            <a href="/">Matematikk 4000</a>
+                            <p>DAVE3705</p><span>10 stp.</span>
                         </div>
                         <div class="emne">
                             <a href="/">Statistisk analyse</a>
@@ -252,25 +297,17 @@
                             <a href="/">Avansert modellering og beregninger</a><span class="material-symbols-outlined">check</span>
                             <p>MAMO2200</p><span>10 stp.</span>
                         </div>
-                        <div class="emne">
-                            <a href="/">Ressurseffektive programmer</a>
-                            <p>DAVE3606</p><span>10 stp.</span>
-                        </div>
-                        <div class="emne">
-                            <a href="/">Avansert modellering og beregninger</a>
-                            <p>MAMO2200</p><span>10 stp.</span>
-                        </div>
                     </div>
                 </section>
             </section>
 
             <section class="studieaar" id="tredjeaar">
                 <h3>3. Studieår</h3>
-                <a href="#MOF5">Matematikk og fysikk</a>
-                <a href="#SODM5">Statistiske og datadrevne metoder</a>
-                <a href="#VB5">Vitenskapelige beregninger</a>
                 <section class="semester">
                     <h4>5. Semester</h4>
+                    <a href="#MOF5">Matematikk og fysikk</a>
+                    <a href="#SODM5">Statistiske og datadrevne metoder</a>
+                    <a href="#VB5">Vitenskapelige beregninger</a>
                     <div class="emnegruppe" id="MOF5">
                         <div class="emne">
                             <a href="/">Matematikk 3000</a>
@@ -352,6 +389,9 @@
                 </section>
                 <section class="semester">
                     <h4>6. Semester</h4>
+                    <a href="#MOF6">Matematikk og fysikk</a>
+                    <a href="#SODM6">Statistiske og datadrevne metoder</a>
+                    <a href="#VB6">Vitenskapelige beregninger</a>
                     <div class="emnegruppe" id="MOF6">
                         <div class="emne">
                             <a href="/">Bacheloroppgave</a>
