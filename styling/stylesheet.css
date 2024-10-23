@@ -367,13 +367,25 @@ video {
     cursor: pointer;
 }
 
-#MOF3:checked ~ .emnegruppeMOF3,
+/*#MOF3:checked ~ .emnegruppeMOF3,
 #SODM3:checked ~ .emnegruppeSODM3,
 #VB3:checked ~ .emnegruppeSODM3 {
     display: block;
+}*/
+
+#MOF3:checked ~ #emnegruppeMOF3 {
+    display: grid;
 }
-.emnegruppeMOF3,
-.emnegruppeSODM3 {
+
+#SODM3:checked ~ #emnegruppeSODM3 {
+    display: grid;
+}
+
+#VB3:checked ~ #emnegruppeSODM3 {
+    display: grid;
+}
+#emnegruppeMOF3,
+#emnegruppeSODM3 {
     display: none;
 }
 
