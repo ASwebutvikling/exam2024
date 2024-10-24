@@ -55,16 +55,23 @@ a {
 }
 
 button{
-    background-color: var(--main-dark);
     text-decoration: none;
     font-size: 1rem;
-    color: var(--main-light);
     padding: 1rem;
     border-radius: 1.5rem;
     border: none;
     cursor: pointer;
     display: inline-block;
-    width: 100%;
+}
+
+.button-primary{
+    background-color: var(--main-dark);
+    color: var(--main-light);
+}
+
+.button-secondary {
+    background-color: var(--main-light);
+    color: var(--main-dark);
 }
 
 img {
@@ -439,12 +446,12 @@ video {
 
     .program-list .grid-container {
         text-align: left;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 
     .info-wrapper {
         grid-template-rows: auto;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1;
     }
 
     .info-box, .info-box3 {
@@ -456,7 +463,7 @@ video {
 
 
 /* media query for small devices like phones */
-@media (min-width:48.1em) and (max-width:63em) {
+@media (min-width: 48.01em) and (max-width:63em) {
     .video-container {
         display: flex;
         flex-direction: column;
