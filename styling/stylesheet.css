@@ -159,7 +159,7 @@ nav input, .burger {
 
 
 /* navbar outline for current page */
-.pointer {
+#pointer {
     text-decoration: underline var(--main-light);
 }
 
