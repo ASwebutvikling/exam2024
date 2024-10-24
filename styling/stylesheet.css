@@ -217,17 +217,11 @@ video {
     width: 100%;
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     justify-content: space-between;
+    font-size: 1.5rem;
     gap: 2rem;
     padding: 2rem;
-    margin: auto;
-}
-
-.program-list .grid-container .grid-item {
-    font-size: 1.5rem;
-    grid-column: span 1;
-    grid-row: auto ;
 }
 
 .info-container {
@@ -445,8 +439,7 @@ video {
 
     .program-list .grid-container {
         text-align: left;
-        grid-template-rows: auto;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .info-wrapper {
@@ -476,8 +469,7 @@ video {
 
     .program-list .grid-container {
         text-align: left;
-        grid-template-rows: auto;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .info-wrapper {
