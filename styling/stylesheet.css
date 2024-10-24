@@ -183,11 +183,9 @@ main {
 }
 
 .header-container, .video-container {
-    /*background-color: var(--main-light);*/
     margin-top: 3rem;
     width: 100%;
     color: var(--main-light);
-    border-radius: 1.5rem;
     padding: 2rem;
     align-items: center;
 }
@@ -203,10 +201,12 @@ main {
 }
 
 .video-container p, .header-container p {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    text-align: center;
 }
 
 video {
+    border: solid var(--main-light) 0.2rem;
     border-radius: 1.5rem;
     width: 100%;
 }
@@ -364,6 +364,10 @@ video {
 
 /* media query for small devices like phones and smaller tablets */
 @media (max-width:48em){
+
+    p, li {
+        font-size: 1rem;
+    }
 
     /* styling dropdown navbar menu. The menu is invisible when the toggle is unclicked */
     .nav-items-wrapper {
