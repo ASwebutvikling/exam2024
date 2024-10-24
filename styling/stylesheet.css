@@ -54,6 +54,10 @@ a {
     text-decoration: none;
 }
 
+label {
+    cursor: pointer;
+}
+
 button{
     text-decoration: none;
     font-size: 1rem;
@@ -286,27 +290,31 @@ video {
 
 }
 
+
+.studie-oppbygning input {
+    display: none;
+}
+
 .studieaar {
-    /*background-color: blueviolet;*/
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 3rem;
-    width: 100%;
+}
+
+.studieaar h3 {
+    justify-self: center;
 }
 
 .semester {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
     padding: 1rem;
 }
 
 .semester:not(:last-child) {
     border-bottom: solid;
     margin-bottom: 1rem;
-}
-
-.studieaar h3 {
-    background-color: aqua;
-    width: max-content;
 }
 
 .button-group {
@@ -330,11 +338,11 @@ video {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 0.5rem;
     /*background-color: pink;*/
 }
 
 .emne a {
-    font-weight: 500;
     font-size: 1.5rem;
     color: var(--main-dark);
     text-decoration:  underline var(--main-light) ;
@@ -347,49 +355,24 @@ video {
 }
 
 #forsteaar:target, #andreaar:target, #tredjeaar:target {
-    display: block;
+    display: flex;
 }
 
 #forsteaar, #andreaar, #tredjeaar  {
     display: none;
 }
 
-.semester input {
-}
-
-.semester label {
-    cursor: pointer;
-}
-
-/*#MOF3:checked ~ .emnegruppeMOF3,
-#SODM3:checked ~ .emnegruppeSODM3,
-#VB3:checked ~ .emnegruppeSODM3 {
-    display: block;
-}*/
-
-#MOF3:checked ~ #emnegruppeMOF3 {
+#MOF3:checked ~ #emnegruppeMOF3, #SODM3:checked ~ #emnegruppeSODM3 , #VB3:checked ~ #emnegruppeSODM3,
+#MOF4:checked ~ #emnegruppeMOF4, #SODM4:checked ~ #emnegruppeSODM4 , #VB4:checked ~ #emnegruppeVB4,
+#MOF5:checked ~ #emnegruppeMOF5, #SODM5:checked ~ #emnegruppeSODM5 , #VB5:checked ~ #emnegruppeVB5,
+#MOF6:checked ~ #emnegruppeMOF6, #SODM6:checked ~ #emnegruppeSODM6 , #VB6:checked ~ #emnegruppeVB6 {
     display: grid;
 }
 
-#SODM3:checked ~ #emnegruppeSODM3 {
-    display: grid;
-}
-
-#VB3:checked ~ #emnegruppeSODM3 {
-    display: grid;
-}
-#emnegruppeMOF3,
-#emnegruppeSODM3 {
-    display: none;
-}
-
-#MOF3:target, #MOF4:target, #MOF5:target, #MOF6:target, 
-#SODM3:target, #SODM4:target, #SODM5:target, #SODM6:target, 
-#VB4:target, #VB5:target, #VB6:target {
-    display: block;
-}
-
-#MOF3, #MOF4, #MOF5, #MOF6, #SODM3, #SODM4, #SODM5, #SODM6, #VB4, #VB5, #VB6 {
+#emnegruppeMOF3, #emnegruppeSODM3,
+#emnegruppeMOF4, #emnegruppeSODM4, #emnegruppeVB4,
+#emnegruppeMOF5, #emnegruppeSODM5, #emnegruppeVB5,
+#emnegruppeMOF6, #emnegruppeSODM6, #emnegruppeVB6 {
     display: none;
 }
 
