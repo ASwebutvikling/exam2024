@@ -92,6 +92,10 @@ section {
     padding: 2rem;
 }
 
+table, th, td {
+    padding: 1rem;
+}
+
 /* general styling of navbar */
 nav {
     /*position: fixed;*/
@@ -279,6 +283,7 @@ video {
 }
 
 .studieaar {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -290,6 +295,7 @@ video {
 }
 
 .semester {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -308,34 +314,15 @@ video {
     justify-content: space-between;
     gap: 0;
 }
-.emnegruppe {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(4, 1fr);
-    margin: auto;
-    justify-content: space-between;
-    gap: 1rem;
-}
 
-.emne {
-    border-top: solid;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 0.5rem;
-    /*background-color: pink;*/
-}
-
-.emne a {
-    font-size: 1.5rem;
+.emnegruppe a {
     color: var(--main-dark);
     text-decoration:  underline var(--main-light) ;
     transition: text-decoration-color 400ms ease-in-out;
     padding: auto;
 }
 
-.emne a:hover{
+.emnegruppe a:hover{
     text-decoration: underline var(--main-darker);
 }
 
