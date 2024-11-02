@@ -443,4 +443,94 @@ footer ul {
 }
 
 .activity footer a:hover {
-    color: var(-
+    color: var(--activity-dark);
+    text-decoration:  underline dotted var(--activity-dark) ;
+    transition: text-decoration-color 400ms ease-in-out;
+    padding: auto;
+}
+/* media query for small devices like phones and smaller tablets */
+@media (max-width:48em){
+
+    p, li {
+        font-size: 1.5rem;
+    }
+
+    /* styling dropdown navbar menu. The menu is invisible when the toggle is unclicked */
+    .nav-items-wrapper {
+        height: 28rem;
+        position: absolute;
+        top: 5.5rem;
+        display: none;
+        left: 0;
+        width: 100vw;
+        background-color: rgb(51, 50, 52);;
+    }
+
+    /* Adjusting link sizing */
+    .nav-items-wrapper a {
+        font-size: 2rem;
+    }
+
+    /* justifying links for the dropdown navbar */
+    .nav-items {
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+        margin-left: 2rem;
+    }
+
+    /* display toggle*/
+    .burger {
+        display: block;
+    }
+
+    /* when toggle is cliked nav links appear */
+    #burger-toggle:checked ~ .nav-items-wrapper {
+        display: block;
+    }
+
+    .video-container, .footer-header, .footer-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .video-container p {
+        font-size: 2rem;
+    }
+
+    .program-list .grid-container {
+        text-align: left;
+        grid-template-columns: 1fr;
+    }
+    
+
+}
+
+
+/* media query for small devices like phones */
+@media (min-width: 48.01em) and (max-width:63em) {
+    .video-container, .footer-header, .footer-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+    .video-container p {
+        font-size: 2rem;
+    }
+
+    .program-list .grid-container {
+        text-align: left;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* media query for desktops */
+@media (min-width:64.1em) {
+
+}
