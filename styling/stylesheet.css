@@ -1,6 +1,7 @@
 
 /*Google font imported from https://fonts.google.com/selection*/
 @import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Moderustic:wght@300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Khand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 /* reset some margins, paddings and box */
 * {
     margin: 0;
@@ -105,7 +106,6 @@ nav {
     height: 5.5rem;
     width: 100%;
     display: flex;
-    background-color: var(--main-darker);
     justify-content: space-between;
     align-items: center;
     padding: 0.6rem;
@@ -423,6 +423,34 @@ footer ul {
     justify-self: center;
 }
 
+.activity-body {
+    background-color: var(--activity-dark);
+    font-family: 'Khand', sans-serif;
+}
+
+.activity-header {
+    color: var(--activity-light);
+}
+
+.activity-footer {
+    background-color: var(--activity-light);
+}
+
+.activity-footer a {
+    background-color: var(--activity-light);
+    color: var(--activity-dark);
+}
+
+.activity-footer a {
+    text-decoration:  underline dotted var(--activity-light) ;
+}
+
+.activity-footer a:hover {
+    color: var(--activity-dark);
+    text-decoration:  underline dotted var(--activity-dark) ;
+    transition: text-decoration-color 400ms ease-in-out;
+    padding: auto;
+}
 /* media query for small devices like phones and smaller tablets */
 @media (max-width:48em){
 
