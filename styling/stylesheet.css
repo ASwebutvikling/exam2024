@@ -63,10 +63,11 @@ label {
 
 button{
     text-decoration: none;
-    font-size: 1rem;
+    font-family: "Agdasima", sans-serif;
+    font-size: var(--24px);
     font-weight: 600;
-    padding: 1rem;
-    border-radius: 1.5rem;
+    padding: var(--16px);
+    border-radius: var(--24px);
     border: none;
     cursor: pointer;
     display: inline-block;
@@ -131,7 +132,7 @@ nav input, .burger {
 
 /* styling burger menu toggle */
 .burger span {
-    font-size: 2rem;
+    font-size: var(--32px);
     cursor: pointer;
 }
 
@@ -152,7 +153,7 @@ nav input, .burger {
 
 /* Aligning nav links */
 .nav-items {
-    margin-right: 2rem;
+    margin-right: var(--32px);
     display: flex;
     justify-content: space-between;
     gap: 2rem;
@@ -275,7 +276,7 @@ video {
     border-radius: var(--24px);
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
 }
 
@@ -433,28 +434,36 @@ footer ul {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: var(--activity-light);
     width: 100%;
+}
+
+.activity main a {
+    color: var(--activity-light);
+    text-decoration: underline dotted var(--activity-light);
 }
 
 .activity .container{
+    width: 100%;
+    line-height: 2;
+    border-radius: var(--24px);
     display: grid;
-    grid-template-columns: repeat(2, 50%);
-    height: var(--300px);
-    width: 100%;
-    padding: 0;
-}
-
-.activity .container figure {
-    width: 100%;
-    background-color: aqua;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
 }
 
 .activity .container img {
-    object-fit: contain;
+    border: solid var(--activity-light) 0.2rem;
+    border-radius: 1.5rem;
 }
 
 .activity header {
     color: var(--activity-light);
+}
+
+.activity .header-container {
+    justify-items: center;
 }
 
 .activity footer, .activity footer a {
@@ -471,6 +480,20 @@ footer ul {
     text-decoration:  underline dotted var(--activity-dark) ;
     transition: text-decoration-color 400ms ease-in-out;
     padding: auto;
+}
+
+.activity .button-primary {
+    color: var(--activity-light);
+    background-color: var(--activity-dark);
+}
+
+.activity .button-secondary {
+    color: var(--activity-dark);
+    background-color: var(--activity-light);
+}
+
+.activity button {
+    font-family: 'Khand', sans-serif;
 }
 /* media query for small devices like phones and smaller tablets */
 @media (max-width:48em){
@@ -515,7 +538,7 @@ footer ul {
         display: block;
     }
 
-    .video-container, .footer-header, .footer-main {
+    .video-container, .footer-header, .footer-main, .article-box {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -537,7 +560,7 @@ footer ul {
 
 /* media query for small devices like phones */
 @media (min-width: 48.01em) and (max-width:63em) {
-    .video-container, .footer-header, .footer-main {
+    .video-container, .footer-header, .footer-main, .article-box {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
