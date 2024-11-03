@@ -429,6 +429,30 @@ footer ul {
     font-family: 'Khand', sans-serif;
 }
 
+.activity main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.activity .container{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    height: var(--300px);
+    width: 100%;
+    padding: 0;
+}
+
+.activity .container figure {
+    width: 100%;
+    background-color: aqua;
+}
+
+.activity .container img {
+    object-fit: contain;
+}
+
 .activity header {
     color: var(--activity-light);
 }
