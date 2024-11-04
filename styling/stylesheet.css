@@ -70,6 +70,8 @@ button{
     border-radius: var(--24px);
     cursor: pointer;
     display: inline-block;
+    width: auto;
+    align-self: center;
 }
 
 .button-primary{
@@ -78,10 +80,11 @@ button{
     border: solid var(--main-dark) 2px;
 }
 
-.button-primary:hover {
+.button-primary:hover, .button-primary:active {
     color: var(--main-dark);
     background-color: var(--main-light);
 }
+
 
 .button-secondary {
     background-color: var(--main-light);
@@ -89,7 +92,7 @@ button{
     border: solid var(--main-light) 2px;
 }
 
-.button-secondary:hover {
+.button-secondary:hover, .button-secondary:active {
     background-color: var(--main-darker);
     color: var(--main-light);
 }
@@ -265,17 +268,14 @@ video {
     gap: 2rem;
 }
 
-.column-3 {
-    grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+.column-2, .column-3 {
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .column-3 > .info-box:first-child {
     grid-column: 1 / -1;
 }
 
-.column-2 {
-    grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
-}
 .row {
     /*grid-template-columns: repeat(1, 1fr);*/
 }
@@ -448,12 +448,12 @@ footer ul {
     justify-self: center;
 }
 
-.activity {
+body.activity {
     background-color: var(--activity-dark);
     font-family: 'Khand', sans-serif;
 }
 
-.activity main {
+body.activity main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -531,7 +531,7 @@ footer ul {
     font-family: 'Khand', sans-serif;
 }
 /* media query for small devices like phones and smaller tablets */
-@media (max-width:48em){
+@media (max-width:47.9em){
 
     p, li {
         font-size: 1.5rem;
@@ -573,7 +573,7 @@ footer ul {
         display: block;
     }
 
-    .video-container, .footer-header, .footer-main, .article-box, .button-group {
+    .video-container, .footer-header, .footer-main, .article-box, .button-group, .column-2, .column-3 {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -594,8 +594,8 @@ footer ul {
 
 
 /* media query for small devices like phones */
-@media (min-width: 48.01em) and (max-width:63em) {
-    .video-container, .footer-header, .footer-main, .article-box, .button-group {
+@media (min-width: 48em) and (max-width:63em) {
+    .video-container, .footer-header, .footer-main, .article-box, .button-group, .column-2, .column-3  {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -613,6 +613,6 @@ footer ul {
 
 
 /* media query for desktops */
-@media (min-width:64.1em) {
+@media (min-width:64em) {
 
 }
