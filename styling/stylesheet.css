@@ -68,7 +68,6 @@ button{
     font-weight: 600;
     padding: var(--16px);
     border-radius: var(--24px);
-    border: none;
     cursor: pointer;
     display: inline-block;
 }
@@ -76,11 +75,23 @@ button{
 .button-primary{
     background-color: var(--main-dark);
     color: var(--main-light);
+    border: solid var(--main-dark) 2px;
+}
+
+.button-primary:hover {
+    color: var(--main-dark);
+    background-color: var(--main-light);
 }
 
 .button-secondary {
     background-color: var(--main-light);
     color: var(--main-dark);
+    border: solid var(--main-light) 2px;
+}
+
+.button-secondary:hover {
+    background-color: var(--main-darker);
+    color: var(--main-light);
 }
 
 img {
@@ -231,7 +242,6 @@ video {
 }
 
 .program-list .grid-container {
-    width: 100%;
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: repeat(4, 1fr);
@@ -322,8 +332,8 @@ video {
 }
 
 .studieaar {
-    width: 100%;
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -334,8 +344,8 @@ video {
 }
 
 .semester {
-    width: 100%;
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: space-between;
     gap: 1rem;
@@ -347,11 +357,24 @@ video {
     margin-bottom: 1rem;
 }
 
+table.emnegruppe {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    align-items: stretch;
+    overflow-x: scroll;
+}
+
+table.emnegruppe th, table.emnegruppe td {
+    border: 1px solid var(--main-normal);
+    text-align: left;
+}
+
 .button-group {
     width: 80%;
     display: flex;
     justify-content: space-between;
-    gap: 0;
 }
 
 .emnegruppe a, footer a {
@@ -377,7 +400,7 @@ video {
 #MOF4:checked ~ #emnegruppeMOF4, #SODM4:checked ~ #emnegruppeSODM4 , #VB4:checked ~ #emnegruppeVB4,
 #MOF5:checked ~ #emnegruppeMOF5, #SODM5:checked ~ #emnegruppeSODM5 , #VB5:checked ~ #emnegruppeVB5,
 #MOF6:checked ~ #emnegruppeMOF6, #SODM6:checked ~ #emnegruppeSODM6 , #VB6:checked ~ #emnegruppeVB6 {
-    display: grid;
+    display: table;
 }
 
 #emnegruppeMOF3, #emnegruppeSODM3,
@@ -485,11 +508,23 @@ footer ul {
 .activity .button-primary {
     color: var(--activity-light);
     background-color: var(--activity-dark);
+    border: solid var(--activity-dark) 2px;
+}
+
+.activity .button-primary:hover {
+    color: var(--activity-dark);
+    background-color: var(--activity-light);
 }
 
 .activity .button-secondary {
     color: var(--activity-dark);
     background-color: var(--activity-light);
+    border: solid var(--activity-light) 2px;
+}
+
+.activity .button-secondary:hover {
+    color: var(--activity-light);
+    background-color: var(--activity-dark);
 }
 
 .activity button {
@@ -538,7 +573,7 @@ footer ul {
         display: block;
     }
 
-    .video-container, .footer-header, .footer-main, .article-box {
+    .video-container, .footer-header, .footer-main, .article-box, .button-group {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -560,7 +595,7 @@ footer ul {
 
 /* media query for small devices like phones */
 @media (min-width: 48.01em) and (max-width:63em) {
-    .video-container, .footer-header, .footer-main, .article-box {
+    .video-container, .footer-header, .footer-main, .article-box, .button-group {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
