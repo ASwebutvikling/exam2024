@@ -349,7 +349,6 @@ video {
     flex-direction: column;
     justify-content: space-between;
     gap: 1rem;
-    padding: 1rem;
 }
 
 .semester:not(:last-child) {
@@ -357,18 +356,22 @@ video {
     margin-bottom: 1rem;
 }
 
-table.emnegruppe {
-    max-width: 100%;
+table {
     width: 100%;
+    max-width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
-    align-items: stretch;
-    overflow-x: scroll;
+    empty-cells: hide;
+    border: 1px solid var(--main-normal);
+    margin: 0;
 }
 
-table.emnegruppe th, table.emnegruppe td {
-    border: 1px solid var(--main-normal);
+table thead {
     text-align: left;
+}
+
+table tr {
+    border-bottom: 1px solid var(--main-normal);
 }
 
 .button-group {
@@ -587,6 +590,38 @@ body.activity main {
     .program-list .grid-container {
         text-align: left;
         grid-template-columns: 1fr;
+    }
+
+    table {
+        empty-cells: hide;
+    }
+
+    table thead tr {
+        display: none;
+    }
+
+    table tr {
+        display: block;
+    }
+
+    table th, table td {
+        padding: 0.5rem;
+    }
+
+    table td {
+        text-align: right;
+        display: block;
+        font: var(--16px);
+    }
+
+    table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
     }
     
 
