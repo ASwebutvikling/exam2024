@@ -48,53 +48,32 @@
             2. Each grid-item is presented as an article as they are separate articles of the section
             3. Every article contains an H3 element explaining the contents of the UL list
          -->
-        <section class="program-list">
+        <section class="info-container">
             <h2>Bachelor program</h2>
-            <div class="grid-container">
-                <article class="grid-item">
-                    <h3>Studiested</h3>
-                    <ul>
-                        <li>Pilestredet i Oslo</li>
-                    </ul>
-                </article>
-                <article class="grid-item">
-                    <h3>Varighet</h3>
-                    <ul>
-                        <li>3 år</li>
-                    </ul>
-                </article>
-                <article class="grid-item">
-                    <h3>Omfang</h3>
-                    <ul>
-                        <li>Heltid</li>
-                    </ul>
-                </article>
-                <article class="grid-item">
-                    <h3>Studiepoeng</h3>
-                    <ul>
-                        <li>180</li>
-                    </ul>
-                </article>
-                <article class="grid-item">
-                    <h3>Studiestart</h3>
-                    <ul>
-                        <li>August</li>
-                    </ul>
-                </article>
-                <article class="grid-item">
-                    <h3>Undervisningsspråk</h3>
-                    <ul>
-                        <li>Norsk</li>
-                        <li>Engelsk</li>
-                    </ul>
-                </article>
-                <article class="grid-item">
-                    <h3>Studieplasser</h3>
-                    <ul>
-                        <li>40</li>
-                    </ul>
-                </article>
-            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Studiested</th>
+                        <th>Varighet</th>
+                        <th>Omfang</th>
+                        <th>Studiepoeng</th>
+                        <th>Studiestart</th>
+                        <th>Undervisningsspråk</th>
+                        <th>Studieplasser</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Studiested">Pilstredet</td>
+                        <td data-label="Varighet">3 år</td>
+                        <td data-label="Omfang">Heltid</td>
+                        <td data-label="Studiepoeng">180</td>
+                        <td data-label="studiestart">August</td>
+                        <td data-label="Undervisningsspråk"><ul><li>Norsk</li><li>Engelsk</li></ul></td>
+                        <td data-label="Studieplasser">40</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <!-- This section represents the entrance guidlines, it will be presented in 3 separate "floating" boxes, 
@@ -249,7 +228,6 @@
                     </div>
                 
                     
-
                     <table class="emnegruppe" id="emnegruppeMOF3">
                         <thead>
                             <tr>
@@ -725,7 +703,7 @@
 
         <section class="info-container">
             <h2>Studie tid!</h2>
-            <div class="info-wrapper row">
+            <div class="info-wrapper column-3">
                 <article class="info-box">
                     <h3>Studiestart</h3>
                     <p>Informasjon om program, timeplaner, pensum, 

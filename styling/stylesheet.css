@@ -72,6 +72,11 @@ button{
     display: inline-block;
     width: auto;
     align-self: center;
+    transition:font-size 300ms ease-in-out;
+}
+
+button:hover {
+    font-size: var(--32px);
 }
 
 .button-primary{
@@ -223,7 +228,7 @@ main {
 }
 
 .video-container p, .header-container p {
-    font-size: 2.5rem;
+    font-size: var(--32px);
     text-align: center;
 }
 
@@ -233,24 +238,8 @@ video {
     width: 100%;
 }
 
-.program-list {
-    border-radius: 1.5rem;
-    background-color: var(--main-light);
-    display: flex;
-    flex-direction: column;
-    color: var(--main-dark);
-    justify-items: center;
-    align-items: center;
-    text-align: center;
-}
+.program-list h2 {
 
-.program-list .grid-container {
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: repeat(4, 1fr);
-    justify-content: space-between;
-    margin: 1rem;
-    gap: 2rem;
 }
 
 .info-container {
@@ -268,6 +257,28 @@ video {
     gap: 2rem;
 }
 
+.info-box {
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: var(--main-normal);
+    font-size: 1.5rem;
+}
+
+.info-box a {
+    color: var(--main-light);
+    text-decoration: underline;
+    transition: font-size 400ms ease-in-out;
+}
+
+.info-box a:hover {
+    color: var(--activity-darker);
+}
+
+.info-box ul {
+    padding-left: var(--24px);
+    list-style: inside;
+}
+
 .column-2, .column-3 {
     grid-template-columns: repeat(2, 1fr);
 }
@@ -283,7 +294,7 @@ video {
 .article-box {
     width: 100%;
     line-height: 2;
-    border-radius: var(--24px);
+    border-radius: 8px;
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: repeat(2, 1fr);
@@ -295,26 +306,26 @@ video {
     border-radius: 1.5rem;
 }
 
-.info-box {
-    padding: 2rem;
-    border-radius: 1.5rem;
-    background-color: var(--main-normal);
-    font-size: 1.5rem;
-}
 
-.info-box ul {
-    padding-left: var(--24px);
-    list-style: inside;
-}
 
 .light {
     background-color: var(--main-light);
     color: var(--main-dark);
 }
 
+.light a {
+    font-size: var(--24px);
+    color: var(--main-darker);
+    text-decoration: underline;
+}
+
+.light a:hover {
+    color: var(--main-normal);
+}
+
 .studie-oppbygning {
     background-color: var(--main-light);
-    border-radius: 1.5rem;
+    border-radius: 8px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -362,8 +373,21 @@ table {
     border-collapse: collapse;
     table-layout: fixed;
     empty-cells: hide;
+    color: var(--main-darker);
+    border: 1px solid var(--main-darker);
+    background-color: var(--main-light);
+}
+
+table li {
+    font-size: var(--16px);
+}
+
+td, th {
     border: 1px solid var(--main-normal);
-    margin: 0;
+}
+
+table th {
+    background-color: var(--main-normal);
 }
 
 table thead {
@@ -533,12 +557,10 @@ body.activity main {
 .activity button {
     font-family: 'Khand', sans-serif;
 }
-/* media query for small devices like phones and smaller tablets */
-@media (max-width:47.9em){
 
-    p, li {
-        font-size: 1.5rem;
-    }
+
+/* media query for small devices like phones and smaller tablets */
+@media (max-width:63em){
 
     /* styling dropdown navbar menu. The menu is invisible when the toggle is unclicked */
     .nav-items-wrapper {
@@ -547,8 +569,8 @@ body.activity main {
         top: 5.5rem;
         display: none;
         left: 0;
-        width: 100vw;
-        background-color: rgb(51, 50, 52);;
+        width: 100%;
+        background-color: var(--main-darker);;
     }
 
     /* Adjusting link sizing */
@@ -587,11 +609,6 @@ body.activity main {
         font-size: 2rem;
     }
 
-    .program-list .grid-container {
-        text-align: left;
-        grid-template-columns: 1fr;
-    }
-
     table {
         empty-cells: hide;
     }
@@ -602,10 +619,6 @@ body.activity main {
 
     table tr {
         display: block;
-    }
-
-    table th, table td {
-        padding: 0.5rem;
     }
 
     table td {
@@ -619,10 +632,6 @@ body.activity main {
         float: left;
         font-weight: bold;
     }
-
-    table td:last-child {
-        border-bottom: 0;
-    }
     
 
 }
@@ -630,22 +639,8 @@ body.activity main {
 
 /* media query for small devices like phones */
 @media (min-width: 48em) and (max-width:63em) {
-    .video-container, .footer-header, .footer-main, .article-box, .button-group, .column-2, .column-3  {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 2rem;
-    }
-    .video-container p {
-        font-size: 2rem;
-    }
 
-    .program-list .grid-container {
-        text-align: left;
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
-
 
 /* media query for desktops */
 @media (min-width:64em) {
