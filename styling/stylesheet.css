@@ -22,6 +22,8 @@
     --16px : 1rem;
     --24px : 1.5rem;
     --32px : 2rem;
+    --40px : 2.5rem;
+    --48px : 3rem;
     --300px : 18.75rem;
 }
 
@@ -29,32 +31,33 @@ body {
     background-color: var(--main-darker);
     margin: 0;
     padding: 0;
+    font-size: var(--24px);
 }
 
 h1 {
     text-align: center;
-    font-size: 3rem;
+    font-size: var(--48px);
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: var(--40px);
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: var(--32px);
 }
 
 h4 {
-    font-size: 2rem;
-}
-
-p, li {
-    font-size: 1.5rem;
-    line-height: 1.5;
+    font-size: var(--32px);
 }
 
 a {
     text-decoration: none;
+}
+
+nav ul a:focus {
+    text-decoration: underline var(--main-light);
+
 }
 
 label {
@@ -112,7 +115,7 @@ ul {
 }
 
 section {
-    padding: 2rem;
+    padding: 0;
 }
 
 table, th, td {
@@ -151,14 +154,14 @@ nav input, .burger {
 
 /* styling burger menu toggle */
 .burger span {
-    font-size: var(--32px);
+    font-size: 2rem;
     cursor: pointer;
 }
 
 /* Placing the logo in a fitting position, height set to 100% so that any image inside will fit the 80px height of the navbar */
 .logo {
     height: 100%;
-    margin: 0 auto 0 2rem;
+    margin: 0 auto 0 var(--32px);
     padding: 0;
 }
 
@@ -183,7 +186,7 @@ nav input, .burger {
 .nav-items-wrapper a {
     font-weight: 500;
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: var(--24px);
     text-decoration: underline rgba(255, 255, 255, 0);
     color: var(--main-light);
     transition: text-decoration-color 400ms ease-in-out;
@@ -191,9 +194,9 @@ nav input, .burger {
 }
 
 /* navbar outline for current page */
-#pointer {
+/*#pointer {
     text-decoration: underline var(--main-light);
-}
+}*/
 
 /* navbar outline when link is hovered */
 .nav-items-wrapper a:hover {
@@ -204,27 +207,24 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 3rem;
+    gap: var(--48px);
     width: 85%;
     margin: auto;
 }
 
 .header-container, .video-container {
-    margin-top: 3rem;
+    margin-top: var(--48px);
     width: 100%;
     color: var(--main-light);
-    padding: 2rem;
+    padding: var(--32px);
     align-items: center;
 }
 
 .video-container {
-    display: grid;
-    grid-template-rows: 1fr 3fr;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.video-container h1 {
-    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--32px);
 }
 
 .video-container p, .header-container p {
@@ -238,30 +238,29 @@ video {
     width: 100%;
 }
 
-.program-list h2 {
-
+figure {
+    width: 100%;
 }
 
 .info-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: var(--32px);
     color: var(--main-light);
 }
 
 .info-wrapper {
-    margin-top: 2rem;
     display: grid;
     grid-template-rows: auto;
     justify-content: center;
-    gap: 2rem;
+    gap: var(--32px);
 }
 
 .info-box {
-    padding: 2rem;
+    padding: var(--32px);
     border-radius: 8px;
     background-color: var(--main-normal);
-    font-size: 1.5rem;
+    font-size: var(--24px);
 }
 
 .info-box a {
@@ -287,18 +286,16 @@ video {
     grid-column: 1 / -1;
 }
 
-.row {
-    /*grid-template-columns: repeat(1, 1fr);*/
-}
-
 .article-box {
     width: 100%;
-    line-height: 2;
     border-radius: 8px;
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    gap: var(--24px);
     align-items: center;
+    padding: var(--32px);
 }
 
 .article-box img {
@@ -330,10 +327,11 @@ video {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 2rem;
+    gap: var(--32px);
     color: var(--main-dark);
     align-items: center;
     justify-items: center;
+    padding: var(--32px);
 
 }
 
@@ -348,6 +346,7 @@ video {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    padding: 0;
 }
 
 .studieaar h3 {
@@ -360,6 +359,8 @@ video {
     flex-direction: column;
     justify-content: space-between;
     gap: 1rem;
+    padding: 0;
+    padding-bottom: var(--24px);
 }
 
 .semester:not(:last-child) {
@@ -379,10 +380,11 @@ table {
 }
 
 table li {
-    font-size: var(--16px);
+    font-size: var(--24px);
 }
 
 td, th {
+    padding: var(--16px);
     border: 1px solid var(--main-normal);
 }
 
@@ -402,6 +404,8 @@ table tr {
     width: 80%;
     display: flex;
     justify-content: space-between;
+    gap: var(--24px);
+    align-items: center;
 }
 
 .emnegruppe a, footer a {
@@ -489,22 +493,36 @@ body.activity main {
 }
 
 .activity main a {
-    color: var(--activity-light);
-    text-decoration: underline dotted var(--activity-light);
+    color: var(--activity-dark);
+    text-decoration: underline dotted var(--activity-dark);
+}
+
+.activity .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--24px);
+    row-gap: var(--32px);
+    padding: var(--24px);
 }
 
 .activity .container{
+    background-color: var(--activity-light);
+    color: var(--activity-darker);
     width: 100%;
-    line-height: 2;
+    line-height: 1.5;
     border-radius: var(--24px);
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    padding: var(--32px);
+}
+
+.activity .container section {
+    padding: 0;
 }
 
 .activity .container img {
-    border: solid var(--activity-light) 0.2rem;
+    border: solid var(--activity-dark) 0.2rem;
     border-radius: 1.5rem;
 }
 
@@ -560,7 +578,16 @@ body.activity main {
 
 
 /* media query for small devices like phones and smaller tablets */
-@media (max-width:63em){
+@media (max-width:47em){
+
+    :root {
+        --16px: 0.77rem;  /* Approx 12.32px (16px * 0.77) */
+        --24px: 1.15rem;  /* 24px */
+        --32px: 1.54rem;  /* Approx 24.64px (32px * 0.77) */
+        --40px: 1.92rem;  /* Approx 30.72px (40px * 0.77) */
+        --48px: 2.31rem;  /* Approx 36.96px (48px * 0.77) */
+        --300px: 14.31rem;
+    }
 
     /* styling dropdown navbar menu. The menu is invisible when the toggle is unclicked */
     .nav-items-wrapper {
@@ -575,7 +602,6 @@ body.activity main {
 
     /* Adjusting link sizing */
     .nav-items-wrapper a {
-        font-size: 2rem;
     }
 
     /* justifying links for the dropdown navbar */
@@ -584,8 +610,8 @@ body.activity main {
         width: 100%;
         flex-direction: column;
         justify-content: center;
-        gap: 3rem;
-        margin-left: 2rem;
+        gap: var(--48px);
+        margin-left: var(--32px);
     }
 
     /* display toggle*/
@@ -596,17 +622,6 @@ body.activity main {
     /* when toggle is cliked nav links appear */
     #burger-toggle:checked ~ .nav-items-wrapper {
         display: block;
-    }
-
-    .video-container, .footer-header, .footer-main, .article-box, .button-group, .column-2, .column-3 {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 2rem;
-    }
-
-    .video-container p {
-        font-size: 2rem;
     }
 
     table {
@@ -622,12 +637,13 @@ body.activity main {
     }
 
     table td {
+        font-size: var(--24px);
         text-align: right;
         display: block;
-        font: var(--16px);
     }
 
     table td::before {
+        font-size: var(--24px);
         content: attr(data-label);
         float: left;
         font-weight: bold;
@@ -636,13 +652,11 @@ body.activity main {
 
 }
 
-
-/* media query for small devices like phones */
-@media (min-width: 48em) and (max-width:63em) {
-
-}
-
-/* media query for desktops */
-@media (min-width:64em) {
-
+@media (max-width:47em), (min-width: 47em) and (max-width:63em) {
+    .footer-header, .footer-main, .article-box, .button-group, .column-2, .column-3, .activity .container, .activity .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: var(--32px);
+    }
 }
