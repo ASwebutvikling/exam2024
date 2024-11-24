@@ -11,10 +11,11 @@
 
 :root {
     font-family: "Agdasima", sans-serif;
-    --main-light: rgb(244, 244, 244);
-    --main-normal: rgb(143, 143, 143);
-    --main-dark: rgb(86, 86, 86);
-    --main-darker: rgb(50,50,50);
+    --main-light: rgb(237, 236, 235);
+    --main-box-light: rgb(93, 113, 74);
+    --main-normal: rgb(198, 195, 192);
+    --main-dark: rgb(71, 61, 52);
+    --main-darker: rgb(53, 46, 39);
     --activity-light: rgb(240,235,231);
     --activity-normal: rgb(100,57,17);
     --activity-dark : rgb(75,43,13);
@@ -261,10 +262,11 @@ figure {
     border-radius: 8px;
     background-color: var(--main-normal);
     font-size: var(--24px);
+    color: var(--main-dark);
 }
 
 .info-box a {
-    color: var(--main-light);
+    color: var(--main-dark);
     text-decoration: underline;
     transition: font-size 400ms ease-in-out;
 }
@@ -296,6 +298,8 @@ figure {
     gap: var(--24px);
     align-items: center;
     padding: var(--32px);
+    background-color: var(--main-light);
+    color: var(--main-light);
 }
 
 .article-box img {
@@ -473,10 +477,15 @@ footer {
     justify-content: center;
     gap: 3rem;
     grid-template-columns: repeat(3, 33%);
+    margin-bottom: var(--24px);
 }
 
 footer ul {
     justify-self: center;
+}
+
+footer li {
+    margin: var(--16px);
 }
 
 body.activity {
