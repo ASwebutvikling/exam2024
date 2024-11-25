@@ -109,6 +109,7 @@ img {
     width: 100%;
     margin: 0;
     border-radius: var(--24px);
+    object-fit: cover;
 }
 
 /* Default style none for lists */
@@ -597,6 +598,7 @@ body.activity main {
     }
 
     /* styling dropdown navbar menu. The menu is invisible when the toggle is unclicked */
+    /* makes the items place right under "header", this is because we don't want to effects the nav layout itself only bring the menu down*/
     .nav-items-wrapper {
         height: 28rem;
         position: absolute;
@@ -606,6 +608,7 @@ body.activity main {
         width: 100%;
         background-color: var(--main-darker);
         z-index: 1000;
+        overflow-y: auto;
     }
 
     .activity .nav-items-wrapper {
