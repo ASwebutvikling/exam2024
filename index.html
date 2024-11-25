@@ -32,6 +32,8 @@
     </header>
 
 
+    <!-- The main content is wrapped with main of class row, 
+     this just makes sure that there is even spacing between all content and, same width-->
     <main class="row">
         <section class="header row">
             <h1>Matematisk modellering og datavitenskap – ingeniør</h1>
@@ -47,8 +49,7 @@
         <!-- This section represents the bachelor program info, it will be presented in a grid table, 
             we use section because a heading is natural here so div would not be appropriate
             1. We start the section of with a H2 representing what the viewer will see
-            2. Each grid-item is presented as an article as they are separate articles of the section
-            3. Every article contains an H3 element explaining the contents of the UL list
+            2. Then we proceed to list the data in a table for easy access!
          -->
         <section class="info-container row">
             <h2>Bachelor program</h2>
@@ -82,13 +83,14 @@
             we use section because a heading is natural here so div would not be appropriate
             1. We start the section of with a H2 representing what the viewer will see
             2. Each grid-item is presented as an article as they are separate articles of the section
-            3. Every article contains an H3 element explaining the contents of the paragraph, I use article as the content
-                is standalone and would make sense by itself
+            3. Every article contains an H3 element explaining the contents of the paragraph, I use section as the content
+                is not standalone and would not make sense by itself outside of this page
+            4. The div is used to group the items together
          -->
         <section class="info-container row">
             <h2>Søke?</h2>
             <div class="column column-3">
-                <article class="info-box box">
+                <section class="info-box box">
                     <h3>Opptakskrav og poeng</h3>
                     <p>
                         For å søke på dette programmet må du ha
@@ -101,15 +103,15 @@
     
                         Hvis du mangler generell studiekompetanse eller enkelte fag fra videregående skole, kan du søke på dette studiet om du har bestått <a href="https://www.oslomet.no/studier/tkd/forkurs-ingenior">ettårig forkurs for ingeniørutdanning.</a>
                     </p>
-                </article>
-                <article class="info-box box">
+                </section>
+                <section class="info-box box">
                     <h3>Hva koster det?</h3>
                     <p>Du betaler en semesteravgift hvert semester (student.oslomet.no).
 
                         Er du internasjonal student fra utenfor EU og EØS, må du betale studieavgift (student.oslomet.no). 
                         Det er mulig å søke om unntak for betaling av denne studieavgiften.</p>
-                </article>
-                <article class="info-box box">
+                    </section>
+                <section class="info-box box">
                     <h3>Slik søker du!</h3>
                     <p>Du søker på Samordna opptak med studiekode 215 503.</p>
                     <ul>
@@ -118,7 +120,7 @@
                         <li>1. mars: frist for enkelte søkere</li>
                     </ul>
                     <a href="https://www.oslomet.no/studier/soknad-og-opptak/opptak-til-bachelor-aarsstudier">Mer om å søke på bachelor</a>
-                </article>
+                </section>
             </div>
         </section>
 
@@ -784,9 +786,11 @@
             </div>
         </section>
 
+        <!-- We've used article here as the content is standalone and would make sende by itself-->
+
         <article class="info-container row">
             <h2>Studenthistorier</h2>
-            <section class="article-box box column light">
+            <div class="article-box box column light">
                 <article>
                     <a href="/">Teknologi og design</a>
                     <h3>Spå fremtiden med matematikk og datavitenskap</h3>
@@ -798,7 +802,7 @@
                 <!-- Image fetched from https://www.oslomet.no/studier/studenthistorier/spa-fremtiden-matematikk-datavitenskap
                     Foto: Oda Hveem / OsloMet -->
                 <figure><img src="./media/613c6efdb147-matematikk_oslomet_smilefjes.jpg" alt="staff"></img></figure>
-            </section>
+            </div>
             <button class="button-secondary">Flere Studenthistorier</button>
         </article>
     </main>
