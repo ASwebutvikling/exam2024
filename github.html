@@ -12,7 +12,7 @@
         <nav>
             <input type="checkbox" id="burger-toggle">
             <a class="logo" href="/">
-                <img src="./media/logo.png" alt="logo"></img>
+                <img src="./media/logo.png" alt="logo">
             </a>
 
             <button class="burger" aria-label="Toggle navigation">
@@ -30,20 +30,56 @@
         </nav>
     </header>
 
-    <main>
-        <section class="header-container">
+    <main class="row">
+        <section class="header row">
             <h1>Github</h1>
-            <p>Få innsikt i matematiske modeller og datadrevne metoder
-                 som kan løse mange praktiske og samfunnsnyttige oppgaver.
+            <p>How we collaborated
             </p>
         </section>
+
+        <section class="info-box box row">
+            <h2>Why we chose github</h2>
+            <h3>Benefits</h3>
+            <h4>Version-control</h4>
+            <p>We were able to track changes, revert to previous versions, 
+                and maintain a history of the project's development, which made managing our code much more efficient. 
+                This is also why it is best to make frequent and small commits. We tried to do this as much as possible, 
+                but it wasn't always successful! By committing regularly, 
+                we were able to identify issues early and ensure that our project remained stable and up-to-date.
+            </p>
+
+            <h4>Branches and merging</h4>
+            <p>We were able to work on separate features or bug fixes in isolated branches and then merge them into the main code without major conflicts, 
+                allowing multiple people to work at once without interference. 
+                This branching strategy enabled multiple team members to contribute simultaneously and improve productivity. 
+                When it came time to merge, GitHub's tools helped us resolve conflicts and integrate changes smoothly.</p>            
+            <h4>Communication</h4>
+            <p>We were able to use GitHub's tools for documentation, issue tracking, 
+                and project management, which helped keep everyone on the same page and ensured that tasks were completed efficiently.</p>
+
+            <h4>Project visibilty</h4>
+            <p>We were able to make our project public, which motivated us to thoroughly proof the code. 
+                Knowing that our work was visible to others encouraged us to maintain high standards and ensure that our code was clean and well-documented. 
+                Although we did not actively engage with the community, 
+                the potential for feedback and contributions made us more cautious</p>
+            <section>
+                <h3>specific changes in commit, and commit history</h3>
+                <figure class="column">
+                    <img src="./media/github.png" alt="changing some elements to fit HTML5">
+                    <img src="./media/changes_git.png" alt="changing the layout, to have more fitting names">
+                    <img src="./media/commit_history1.png" alt="parts of github commit history">
+                    <img src="./media/commithistory_2.png" alt="other parths of github commit history">
+                </figure>
+            </section>
+        </section>
+
     </main>
-    <footer>
+    <footer class="light">
         <div class="footer-header">
             <h2>Hold deg oppdatert på hva som skjer på OsloMet</h2>
             <button class="button-primary">Abonner på vårt nyhetsbrev!</button>
         </div>
-        <section class="footer-main column-3">
+        <section class="footer-main column">
             <div>
                 <figure><img src="./media/logo-footer.svg" alt="Oslo met logo"></figure>
                 <address>

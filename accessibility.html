@@ -12,7 +12,7 @@
         <nav>
             <input type="checkbox" id="burger-toggle">
             <a class="logo" href="/">
-                <img src="./media/logo.png" alt="logo"></img>
+                <img src="./media/logo.png" alt="logo">
             </a>
 
             <button class="burger" aria-label="Toggle navigation">
@@ -30,21 +30,110 @@
         </nav>
     </header>
 
-    <main>
-        <section class="header-container activity-header">
+    <main class="row">
+        <section class="header row">
             <h1>Accessibility</h1>
-            <p>Få innsikt i matematiske modeller og datadrevne metoder
-                 som kan løse mange praktiske og samfunnsnyttige oppgaver.
+            <p>Here we go through what measures have been taken to improve our site. 
+                we've use automated and manual tests to find liabilities on our site.
+            Google lighthouse has been used to 
+            execute automated tests </p>
+            <button class="button-secondary"><a href="https://developer.chrome.com/docs/lighthouse/overview/"></a>Take your own test!</button>
+        </section>
+
+        <section class="info-box box">
+            <h2>Automated test</h2>
+            <article class="article-box column">
+                <p>This test was ran on the complete end result, the test gave the results pictured.
+                    Our overall accessibility score was 100 overall. These are very good result, but there is always room for improvement. 
+                    We will take a deeper look into the result now! 
+                </p>
+                <figure><img src="./media/automatedtest.png" alt="automated test"></figure>
+            </article>
+        </section>
+
+        <section class="info-box box row">
+            <h2>User accessibility</h2>
+            <p>The test gave us great accessibility results, 
+                so let's look into what measures have been taken to achieve these results, 
+                and what could have been improved!</p>
+            <section class="info-box">
+                <h3>UI-Accessibility</h3>
+                <div class="article-box column">
+                    <ol>
+                        <li>We've generated a colour palatte in figma to ensure our website had good color contrast, for readability.</li>
+                        <li>We have a pointer id in the navigation bar, this helps the user understand which page they are currently on.</li>
+                        <li>The tables when scaled down, breaks into multiple tables, this makes the table data easily readable on smaller screens</li>
+                        <li>The tables are accessed through radio buttons, this keeps the table content shorter and more specific</li>
+                        <li>All images use alt tags for alternative view of images, this also makes it easier for users with e-reader.</li>
+                    </ol>
+                    <figure>
+                        <img src="./media/pointer.png" alt="pointer demonstartion">
+                        <img src="./media/table.png" alt="table demonstartion">
+                        <img src="./media/radio_group.png" alt="radio demonstration">
+                    </figure>
+                </div>
+            </section>
+            <section class="article-box">
+                <h3>Developer-accessibility</h3>
+                <p>While automated tests are useful, they don't catch everything. 
+                    We conducted manual checks to ensure our site is accessible to all users. 
+                    Here are some coding choices we made to enhance accessibility</p>
+                <div class="row">
+                    <ol>
+                        <li>We used semantic HTML elements like header, nav, main, section, and footer to provide meaningful structure to our content. 
+                            This helps screen readers and other assistive technologies understand the layout and purpose of different sections.</li>
+                        <li>Variables have been used for easy developer changes, this makes it easy to adjust many sizes at the same time.</li>
+                        <li>All "complicated" css solutions has been commented and should be easy for developers to edit</li>
+                        <li>We've created a row and column class for developers to easily use this in the html, when rows or columns are needed</li>
+                        <li>We've also created a light class for developers to easily turn change the color of an html item, this helps cut down redundant code</li>
+                    </ol>
+                    <figure>
+                        <img src="./media/variables.png" alt="variable demonstration">
+                    </figure>
+                </div>
+            </section>
+            
+            <section class="row">
+                <h3>Possible improvements</h3>
+                <p>The accessibility results pointed out that the video 
+                    added should have captions in order for it to be accessible for alle users.</p>
+                <figure>
+                    <img src="./media/accessibilityresults.png" alt="accessibility results">
+                </figure>
+            </section>
+        </section>
+
+        <section class="info-box box row">
+            <h2>SEO and Performance</h2>
+            <h3>SEO</h3>
+            <p>lighthouse complains about the lack of meta description, 
+                this is very good to include for pages that utilize search engines, ours doesn't so we have not prioritized this part</p>
+            <figure>
+                <img src="./media/seo.png" alt="Seo results">
+            </figure>
+            <h3>Performance</h3>
+            <p>Most complaints about the performance stems from browser extensions, but there were also some complaints regarding images.
+                We have chosen to use either jpeg og png, and the browser would prever newer formats like WebP for instance
             </p>
+            <figure>
+                <img src="./media/perfomance.png" alt="performance results">
+                <img src="./media/performance_image.png" alt="performane image"></figure>
+        </section>
+
+        <section class="info-box box row">
+            <h2>Additional observations</h2>
+            <p>The header with is made sticky to provide easy access.</p>
+            <p>We've used rem units as supposed to static px units. This makes sure that the font size is adapted to every users preference</p>
+            <p>We have tried to make a simple, but stylish UI that should be easy to understand and navigate.</p>
         </section>
     </main>
     
-    <footer>
+    <footer class="light">
         <div class="footer-header">
             <h2>Hold deg oppdatert på hva som skjer på OsloMet</h2>
             <button class="button-primary">Abonner på vårt nyhetsbrev!</button>
         </div>
-        <section class="footer-main column-3">
+        <section class="footer-main column">
             <div>
                 <figure><img src="./media/logo-footer.svg" alt="Oslo met logo"></figure>
                 <address>

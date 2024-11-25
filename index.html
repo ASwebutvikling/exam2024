@@ -13,7 +13,7 @@
         <nav>
             <input type="checkbox" id="burger-toggle">
             <a class="logo" href="/">
-                <img src="./media/logo.png" alt="logo"></img>
+                <img src="./media/logo.png" alt="logo">
             </a>
 
             <button class="burger" aria-label="Toggle navigation">
@@ -32,11 +32,13 @@
     </header>
 
 
-    <main>
-        <section class="video-container">
+    <main class="row">
+        <section class="header row">
             <h1>Matematisk modellering og datavitenskap – ingeniør</h1>
             <p>Få innsikt i matematiske modeller og datadrevne metoder
                  som kan løse mange praktiske og samfunnsnyttige oppgaver.</p>
+            
+                 <!-- Video fetched from https://film.oslomet.no/matematisk-modellering-og -->
             <figure>
                 <video src="./media/matematisk-modellering-og-video.mp4" controls></video>
             </figure>
@@ -48,7 +50,7 @@
             2. Each grid-item is presented as an article as they are separate articles of the section
             3. Every article contains an H3 element explaining the contents of the UL list
          -->
-        <section class="info-container">
+        <section class="info-container row">
             <h2>Bachelor program</h2>
             <table>
                 <thead>
@@ -58,7 +60,7 @@
                         <th>Omfang</th>
                         <th>Studiepoeng</th>
                         <th>Studiestart</th>
-                        <th>Undervisningsspråk</th>
+                        <th>Undervisnings-språk</th>
                         <th>Studieplasser</th>
                     </tr>
                 </thead>
@@ -69,7 +71,7 @@
                         <td data-label="Omfang">Heltid</td>
                         <td data-label="Studiepoeng">180</td>
                         <td data-label="studiestart">August</td>
-                        <td data-label="Undervisningsspråk"><ul><li>Norsk</li><li>Engelsk</li></ul></td>
+                        <td data-label="Undervisnings-språk"><ul><li>Norsk</li><li>Engelsk</li></ul></td>
                         <td data-label="Studieplasser">40</td>
                     </tr>
                 </tbody>
@@ -83,10 +85,10 @@
             3. Every article contains an H3 element explaining the contents of the paragraph, I use article as the content
                 is standalone and would make sense by itself
          -->
-        <section class="info-container">
+        <section class="info-container row">
             <h2>Søke?</h2>
-            <div class="info-wrapper column-3">
-                <article class="info-box">
+            <div class="column column-3">
+                <article class="info-box box">
                     <h3>Opptakskrav og poeng</h3>
                     <p>
                         For å søke på dette programmet må du ha
@@ -100,14 +102,14 @@
                         Hvis du mangler generell studiekompetanse eller enkelte fag fra videregående skole, kan du søke på dette studiet om du har bestått <a href="https://www.oslomet.no/studier/tkd/forkurs-ingenior">ettårig forkurs for ingeniørutdanning.</a>
                     </p>
                 </article>
-                <article class="info-box">
+                <article class="info-box box">
                     <h3>Hva koster det?</h3>
                     <p>Du betaler en semesteravgift hvert semester (student.oslomet.no).
 
                         Er du internasjonal student fra utenfor EU og EØS, må du betale studieavgift (student.oslomet.no). 
                         Det er mulig å søke om unntak for betaling av denne studieavgiften.</p>
                 </article>
-                <article class="info-box">
+                <article class="info-box box">
                     <h3>Slik søker du!</h3>
                     <p>Du søker på Samordna opptak med studiekode 215 503.</p>
                     <ul>
@@ -123,21 +125,23 @@
         <!-- This section represents the "Studie oppbygning", it will be presented in many grid boxes that are not stand alone items, 
             we use section because a heading is natural here so div would not be appropriate
             1. We start the section of with a H2 representing what the viewer will see
-            2. Each grid-item is presented as div as they are separate boxes of the section
-            3. Every we use div here as the content is standalone and would not make sense by itself any other place.
+            2. Each Table represents the semesterplan, for semesters with different study lines there is a separate table
+            3. We use tables as they are good to arrange data
          -->
-        <!--This is made with code from https://codepen.io/alicegh/pen/dvdVQj-->
-        <section class="studie-oppbygning">
+        <section class="studie-oppbygning light row">
             <h2>Studiets oppbygning</h2>
-            <div class="button-group">
-                <a href="#forsteaar"><button class="button-primary">1. studieår</button></a>
-                <a href="#andreaar"><button class="button-primary">2. studieår</button></a>
-                <a href="#tredjeaar"><button class="button-primary">3. studieår</button></a>
+            <input type="radio" id="forste" name="skole">
+            <input type="radio" id="andre" name="skole">
+            <input type="radio" id="tredje" name="skole">
+            <div class="radio-group">
+                <button class="button-primary"><label for="forste">1. studieår</label></button>
+                <button class="button-primary"><label for="andre">2. studieår</label></button>
+                <button class="button-primary"><label for="tredje">3. studieår</label></button>
                 <p>Valfritt emne<span class="material-symbols-outlined">check</span></p>
             </div>
-            <section class="studieaar" id="forsteaar">
+            <section class="studieaar row" id="forsteaar">
                 <h3>1. Studieår</h3>
-                <section class="semester">
+                <section class="semester row">
                     <h4>1. Semester</h4>
                     <table class="emnegruppe">
                         <thead>
@@ -177,7 +181,7 @@
                     </table>
                 </section>
                 
-                <section class="semester">
+                <section class="semester row">
                     <h4>2. Semester</h4>
                     <table class="emnegruppe">
                         <thead>
@@ -212,9 +216,9 @@
                 </section>
             </section>
     
-            <section class="studieaar" id="andreaar">
+            <section class="studieaar row" id="andreaar">
                 <h3>2. Studieår</h3>
-                <section class="semester">
+                <section class="semester row">
                     <h4>3. Semester</h4>
 
                     <input type="radio" id="MOF3" name="semester3" checked="checked">
@@ -229,6 +233,7 @@
                 
                     
                     <table class="emnegruppe" id="emnegruppeMOF3">
+                        <caption>Matematikk og fysikk</caption>
                         <thead>
                             <tr>
                                 <th>EMNE</th>
@@ -260,6 +265,7 @@
                     </table>
 
                     <table class="emnegruppe" id="emnegruppeSODM3">
+                        <caption>Statistiske og datadrevne metoder/Vitenskapelige beregninger</caption>
                         <thead>
                             <tr>
                                 <th>EMNE</th>
@@ -290,7 +296,7 @@
                         </tbody>
                     </table>
                 </section>
-                <section class="semester">
+                <section class="semester row">
                     <h4>4. Semester</h4>
 
                     <input type="radio" id="MOF4" name="semester4" checked="checked">
@@ -304,6 +310,7 @@
                     </div>
 
                     <table class="emnegruppe" id="emnegruppeVB4">
+                        <caption>Matematikk og fysikk</caption>
                         <thead>
                             <tr>
                                 <th>EMNE</th>
@@ -335,6 +342,7 @@
                     </table>
 
                     <table class="emnegruppe" id="emnegruppeSODM4">
+                        <caption>Statistiske og datadrevne metoder</caption>
                         <thead>
                             <tr>
                                 <th>EMNE</th>
@@ -346,8 +354,8 @@
                         <tbody>
                             <tr>
                                 <td data-label="EMNE"><a href="/">Matematikk 4000</a></td>
-                                <td ddata-label="EMNEKODE">DAVE3606</td>
-                                <td ddata-label="STUDIEPOENG">10 stp.</td>
+                                <td data-label="EMNEKODE">DAVE3606</td>
+                                <td data-label="STUDIEPOENG">10 stp.</td>
                                 <td></td>
                             </tr>
                             <tr>
@@ -366,6 +374,7 @@
                     </table>
                     
                     <table class="emnegruppe" id="emnegruppeMOF4">
+                        <caption>Vitenskapelige beregninger</caption>
                         <thead>
                             <tr>
                                 <th>EMNE</th>
@@ -404,9 +413,9 @@
                 </section>
             </section>
 
-            <section class="studieaar" id="tredjeaar">
+            <section class="studieaar row" id="tredjeaar">
                 <h3>3. Studieår</h3>
-                <section class="semester">
+                <section class="semester row">
                     <h4>5. Semester</h4>
                     
                     <input type="radio" id="MOF5" name="semester5" checked="checked">
@@ -420,6 +429,7 @@
                     </div>
                     
                     <table class="emnegruppe" id="emnegruppeMOF5">
+                        <caption>Matematikk og fysikk</caption>
                         <thead>
                             <tr>
                                 <th>EMNE</th>
@@ -469,6 +479,7 @@
                     </table>
 
                     <table class="emnegruppe" id="emnegruppeSODM5">
+                        <caption>Statistiske og datadrevne metoder</caption>
                         <thead>
                             <tr>
                                 <th>EMNE</th>
@@ -516,6 +527,7 @@
                         </tbody>
                     </table>
                     <table class="emnegruppe" id="emnegruppeVB5">
+                        <caption>Vitenskapelige beregninger</caption>
                         <thead>
                             <tr>
                                 <th>EMNE</th>
@@ -564,7 +576,7 @@
                         </tbody>
                     </table>
                 </section>
-                <section class="semester">
+                <section class="semester row">
                     <h4>6. Semester</h4>
                     
                     <input type="radio" id="MOF6" name="semester6" checked="checked">
@@ -578,6 +590,7 @@
                     </div>
 
                     <table class="emnegruppe" id="emnegruppeMOF6">
+                        <caption>Matematikk og fysikk</caption>
                         <thead>
                             <tr>
                                 <th>EMNE</th>
@@ -620,6 +633,7 @@
                         </tbody>
                     </table>
                     <table class="emnegruppe" id="emnegruppeSODM6">
+                        <caption>Statistiske og datadrevne metoder</caption>
                         <thead>
                             <tr>
                                 <th>EMNE</th>
@@ -656,6 +670,7 @@
                         </tbody>
                     </table>
                     <table class="emnegruppe" id="emnegruppeVB6">
+                        <caption>Vitenskapelige beregninger</caption>
                         <thead>
                             <tr>
                                 <th>EMNE</th>
@@ -701,10 +716,10 @@
             </section>
         </section>
 
-        <section class="info-container">
+        <section class="info-container row">
             <h2>Studie tid!</h2>
-            <div class="info-wrapper column-3">
-                <article class="info-box">
+            <div class="column column-3">
+                <section class="info-box box">
                     <h3>Studiestart</h3>
                     <p>Informasjon om program, timeplaner, pensum, 
                         fadderuker og mye mer finner du på studiestartsiden 
@@ -712,8 +727,8 @@
                     <p>NB! Vær obs på at timeplanen som ligger på studiestartsiden er en timeplan for alle studentene på kullet.
                     </p>
                     <p>For å se din personlige timeplan må du logge deg inn på "Min side" (student.oslomet.no) etter at du har aktivert IT-kontoen din og du er blitt plassert i klasse/gruppe. Dette skjer vanligvis uken før studiestart.</p>
-                </article>
-                <article class="info-box">
+                </section>
+                <section class="info-box box">
                     <h3>Hvordan foregår undervisningen</h3>
                     <p>
                         Undervisningen er en kombinasjon av  
@@ -732,33 +747,33 @@
                     <p>For å gjennomføre studiet på normert tid, 
                         må du regne med å bruke om lag 40 timer per uke på studierelatert arbeid gjennom hele semesteret.  
                     </p>
-                </article>
-                <article class="info-box">
+                </section>
+                <section class="info-box box">
                     <h3>Utveksling og videre studier</h3>
                     <p>Du kan dra på utveksling i femte semester.</p>
                     <p>Det er mulig å bygge på en master i Anvendt data og informasjonsteknologi (ACIT),
                          om du fullfører en bachelor i matematisk modellering og datavitenskap</p>
                     <p><a href="https://www.oslomet.no/studier/tkd/anvendt-data-informasjonsteknologi">Les mer her!</a></p>
-                </article>
+                </section>
             </div>
         </section>
-        <section class="info-container">
+        <section class="info-container row">
             <h2>Hva lærer du?</h2>
-            <div class="info-wrapper column-3">
-                <section class="info-box">
+            <div class="row column column-3">
+                <section class="box info-box">
                     <h3>Statistiske og datadrevne metoder</h3>
                     <p>Du lærer om hvordan du kan bruke målte data koblet med datadrevne og statistiske metoder til å gjøre beregninger, for eksempel av fremtidige strømpriser.
 
                         Du lærer hvordan du kan løse komplekse og sammensatte problemer, og utforske høydimensjonale datatyper.
                          Moderne metoder innen maskinlæring og kunstig intelligens står sentralt.</p>
                 </section>
-                <section class="info-box">
+                <section class="box info-box">
                     <h3>Vitenskapelige beregninger</h3>
                     <p>Du lærer å lage effektive algoritmer, datastrukturer og kildekoder for å løse matematiske 
                         og fysiske problemer med numeriske metoder.
                         Du lærer å utvikle kildekode og metodikk knyttet til medisinsk teknologi, biologiske prosesser og annet.                    </p>
                 </section>
-                <section class="info-box">
+                <section class="box info-box">
                     <h3>Matematikk og fysikk</h3>
                     <p>Du utforsker algebraiske strukturer, blant annet knyttet til dyp læring og kunstig intelligens.
 
@@ -769,9 +784,9 @@
             </div>
         </section>
 
-        <article class="info-container">
+        <article class="info-container row">
             <h2>Studenthistorier</h2>
-            <section class="article-box light">
+            <section class="article-box box column light">
                 <article>
                     <a href="/">Teknologi og design</a>
                     <h3>Spå fremtiden med matematikk og datavitenskap</h3>
@@ -779,18 +794,22 @@
                         Har du lyst til å finne ut hva som vil skje i fremtiden? Lær å bruke verktøy for å forutsi alt 
                         fra været og strømprisene til utviklingen i boligmarkedet.</p>
                 </article>
+
+                <!-- Image fetched from https://www.oslomet.no/studier/studenthistorier/spa-fremtiden-matematikk-datavitenskap
+                    Foto: Oda Hveem / OsloMet -->
                 <figure><img src="./media/613c6efdb147-matematikk_oslomet_smilefjes.jpg" alt="staff"></img></figure>
             </section>
             <button class="button-secondary">Flere Studenthistorier</button>
         </article>
     </main>
 
-    <footer>
-        <div class="footer-header">
+    <!-- The footer element is a semantic element -->
+    <footer class="light">
+        <section class="footer-header">
             <h2>Hold deg oppdatert på hva som skjer på OsloMet</h2>
             <button class="button-primary">Abonner på vårt nyhetsbrev!</button>
-        </div>
-        <section class="footer-main column-3">
+        </section>
+        <section class="footer-main column">
             <div>
                 <figure><img src="./media/logo-footer.svg" alt="Oslo met logo"></figure>
                 <address>

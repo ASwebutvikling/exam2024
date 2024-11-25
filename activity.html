@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="./styling/stylesheet.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
-<body class="activity">
+<body class="activity row">
     <header>
         <nav>
             <input type="checkbox" id="burger-toggle">
             <a class="logo" href="/">
-                <img src="./media/logo.png" alt="logo"></img>
+                <img src="./media/logo.png" alt="logo">
             </a>
 
             <button class="burger" aria-label="Toggle navigation">
@@ -31,14 +31,21 @@
     </header>
 
     <main class="activity">
-        <section class="header-container">
+        <section class="header row">
             <h1>Discover the art of pottery making</h1>
             <p>Create, shape, and bring your imagination to life with clay.</p>
             <button class="button-secondary">Join a Class</button>
         </section>
 
-        <ul class="cards">
-            <li class="container">
+        <!-- All images in card carousel ar AI-generated 
+            https://www.lummi.ai/photo/a-person-using-clay-on-a-pottery-wheel-in-the-styl-d23fdd4b-eS5Gx creator: pablostanley
+            https://www.lummi.ai/photo/hand-making-clay-on-a-pottery-wheel-in-the-style-o-337e30dd-tlvOx creator : pablostanley
+            https://www.lummi.ai/photo/handcrafted-ceramic-decor-and-kitchenware-zv5xg creator: Steph Meade
+            https://www.lummi.ai/photo/pottery-creation-process-nlp6 creator: pablostanley
+        -->
+        <!-- We've used an unordered list to wrap carousel items -->
+        <ul class="cards column">
+            <li class="card row">
                 <figure><img src="./media/pottery-process.jpg" alt="Pottery making process"> </figure> 
                 <section>
                     <h2>What is Pottery Making?</h2>
@@ -47,7 +54,7 @@
                 </section>  
             </li>
 
-            <li class="container">
+            <li class="card row">
                 <section>
                     <figure><img src="./media/pottery-vase-shell.jpeg" alt="Pottery vase and shell"></figure>
                     <h2>Potter Stories</h2>
@@ -57,7 +64,7 @@
                 </section>
             </li>
     
-            <li class="container">
+            <li class="card row">
                 <section>
                     <figure><img src="./media/pottery-artist.jpeg" alt="Pottery artist"></figure>
                     <h2>Why You'll Love Pottery Making</h2>
@@ -75,7 +82,7 @@
                 </section>
             </li>
     
-            <li class="container">
+            <li class="card row">
                 <section>
                     <figure><img src="./media/pottery-wheel.jpeg" alt="Pottery wheel"></figure>
                     <h2>How to Get Started</h2>
@@ -98,7 +105,7 @@
             <h2>Hold deg oppdatert på hva som skjer på OsloMet</h2>
             <button class="button-primary">Abonner på vårt nyhetsbrev!</button>
         </div>
-        <section class="footer-main column-3">
+        <section class="footer-main column">
             <div>
                 <figure><img src="./media/logo-footer.svg" alt="Oslo met logo"></figure>
                 <address>

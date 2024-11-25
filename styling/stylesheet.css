@@ -9,25 +9,29 @@
     box-sizing: border-box;
 }
 
+/* These variables make for easy adjustments to major styles, both activity and main have their own color styling*/
 :root {
     font-family: "Agdasima", sans-serif;
     --main-light: rgb(237, 236, 235);
-    --main-box-light: rgb(93, 113, 74);
     --main-normal: rgb(198, 195, 192);
     --main-dark: rgb(71, 61, 52);
     --main-darker: rgb(53, 46, 39);
+
     --activity-light: rgb(240,235,231);
     --activity-normal: rgb(100,57,17);
     --activity-dark : rgb(75,43,13);
     --activity-darker: rgb(35,20,6);
+
+    /* All sizes will be adjusted using rem units, 
+    this makes sure that users who choose to change font-size in browser can do so */
     --16px : 1rem;
     --24px : 1.5rem;
     --32px : 2rem;
     --40px : 2.5rem;
     --48px : 3rem;
-    --300px : 18.75rem;
 }
 
+/* We want the body element to fill the entire page with no margins of any kind */
 body {
     background-color: var(--main-darker);
     margin: 0;
@@ -54,17 +58,14 @@ h4 {
 
 a {
     text-decoration: none;
-}
-
-nav ul a:focus {
-    text-decoration: underline var(--main-light);
-
+    font-weight: bolder;
 }
 
 label {
     cursor: pointer;
 }
 
+/* custom styling for button, curved edge buttons */
 button{
     text-decoration: none;
     font-family: "Agdasima", sans-serif;
@@ -76,13 +77,10 @@ button{
     display: inline-block;
     width: auto;
     align-self: center;
-    transition:font-size 300ms ease-in-out;
+    transition: border 300ms ease-in-out;
 }
 
-button:hover {
-    font-size: var(--32px);
-}
-
+/* We created two button styles, for dark background and for light backgrounds*/
 .button-primary{
     background-color: var(--main-dark);
     color: var(--main-light);
@@ -106,13 +104,20 @@ button:hover {
     color: var(--main-light);
 }
 
+/* This makes sure all images use their full width */
 img {
     width: 100%;
     margin: 0;
+    border-radius: var(--24px);
 }
 
+/* Default style none for lists */
 ul {
     list-style-type: none;
+}
+
+ol {
+    padding-left: var(--24px);
 }
 
 section {
@@ -120,9 +125,15 @@ section {
 }
 
 table, th, td {
-    padding: 1rem;
+    padding: var(--16px);
 }
 
+header {
+    background-color: inherit;
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+}
 /* general styling of navbar */
 nav {
     /*position: fixed;*/
@@ -150,19 +161,19 @@ nav input, .burger {
     width: 1.25rem;
     color: var(--main-light);
     padding: 0;
-    margin: 0 2rem 0 auto;
+    margin-right: var(--24px);
 }
 
 /* styling burger menu toggle */
 .burger span {
-    font-size: 2rem;
+    font-size: 2rem; /* Make sure the burger toggle doesn't shrink from media queries */
     cursor: pointer;
 }
 
 /* Placing the logo in a fitting position, height set to 100% so that any image inside will fit the 80px height of the navbar */
 .logo {
     height: 100%;
-    margin: 0 auto 0 var(--32px);
+    margin-left: var(--24px);
     padding: 0;
 }
 
@@ -187,48 +198,82 @@ nav input, .burger {
 .nav-items-wrapper a {
     font-weight: 500;
     text-transform: uppercase;
-    font-size: var(--24px);
-    text-decoration: underline rgba(255, 255, 255, 0);
+    font-size: 1.5rem; /* Making sure nav links don't shrink from media queries */
+    text-decoration: underline var(--main-darker);
     color: var(--main-light);
     transition: text-decoration-color 400ms ease-in-out;
 
 }
 
 /* navbar outline for current page */
-/*#pointer {
+#pointer {
     text-decoration: underline var(--main-light);
-}*/
+}
 
 /* navbar outline when link is hovered */
 .nav-items-wrapper a:hover {
     text-decoration: underline var(--main-light);
 }
 
-main {
+/* All row-boxes will use flex and have a default space for child items */
+.row {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: var(--48px);
-    width: 85%;
-    margin: auto;
+    gap: var(--24px);
 }
 
-.header-container, .video-container {
+/* All column boxes are defined with grid, each grid row should have 2 grid items per row */
+.column {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--24px);
+    row-gap: var(--32px);
+    padding: 0;
+}
+
+/* This is for columns with three boxes, we want one box to span the first row,
+the rest continues the pattern of 2 columns per row */
+.column-3 > .info-box:first-child {
+    grid-column: 1 / -1;
+}
+
+/* secondary styling for some boxes */
+.light {
+    background-color: var(--main-light);
+    color: var(--main-dark);
+}
+
+.light a {
+    color: var(--main-dark);
+    text-decoration: underline var(--main-light) ;
+    transition: text-decoration 400ms ease-in-out;
+    padding: auto;
+}
+
+.light a:hover {
+    text-decoration: underline var(--main-darker);
+}
+
+/* All the main content is in here */
+main {
+    width: 85%;
+    margin: auto;
+    gap: var(--48px);
+}
+
+/* Header is styled a bit different for rest of boxes, text is center aligned */
+.header {
     margin-top: var(--48px);
     width: 100%;
     color: var(--main-light);
     padding: var(--32px);
     align-items: center;
+    justify-items: center;
 }
 
-.video-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: var(--32px);
-}
-
-.video-container p, .header-container p {
+.header p {
     font-size: var(--32px);
     text-align: center;
 }
@@ -243,112 +288,74 @@ figure {
     width: 100%;
 }
 
+/* This container wraps most of of the sections in main, 
+The h2 are outside of the box contents so the color is light to contrast the background-color */
 .info-container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--32px);
     color: var(--main-light);
 }
 
-.info-wrapper {
-    display: grid;
-    grid-template-rows: auto;
-    justify-content: center;
-    gap: var(--32px);
+/* I have two different box styles, one is lighter and made to work with images more*/
+.box {
+    padding: var(--32px);
+    border-radius: 8px;
+    font-size: var(--24px);
+    line-height: 1.5;
 }
 
 .info-box {
-    padding: var(--32px);
-    border-radius: 8px;
     background-color: var(--main-normal);
-    font-size: var(--24px);
-    color: var(--main-dark);
+    color: var(--main-darker);
 }
 
+.info-box img {
+    border: solid var(--main-darker);
+}
+
+/* The links in info box have a small transistion for readability where underline is present */
 .info-box a {
-    color: var(--main-dark);
-    text-decoration: underline;
-    transition: font-size 400ms ease-in-out;
+    color: var(--main-darker);
+    text-decoration: underline var(--main-normal); 
+    transition: text-decoration-color 400ms ease-in-out;
 }
 
 .info-box a:hover {
-    color: var(--activity-darker);
+    text-decoration-color: var(--main-dark);
 }
 
+/* Make the list indent, so it doesn't look weird */
 .info-box ul {
     padding-left: var(--24px);
     list-style: inside;
 }
 
-.column-2, .column-3 {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.column-3 > .info-box:first-child {
-    grid-column: 1 / -1;
-}
-
+/* The article box is similar to the info box but is made  */
 .article-box {
     width: 100%;
-    border-radius: 8px;
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: space-between;
     gap: var(--24px);
     align-items: center;
-    padding: var(--32px);
-    background-color: var(--main-light);
-    color: var(--main-light);
 }
 
 .article-box img {
     border: solid var(--main-dark) 0.2rem;
-    border-radius: 1.5rem;
 }
 
-
-
-.light {
-    background-color: var(--main-light);
-    color: var(--main-dark);
-}
-
-.light a {
-    font-size: var(--24px);
-    color: var(--main-darker);
-    text-decoration: underline;
-}
-
-.light a:hover {
-    color: var(--main-normal);
-}
-
+/* This section consists of the studie-tables styling */
 .studie-oppbygning {
-    background-color: var(--main-light);
     border-radius: 8px;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     gap: var(--32px);
-    color: var(--main-dark);
     align-items: center;
     justify-items: center;
     padding: var(--32px);
-
 }
 
-
+/* We have used several input for radio-boxes and check boxes, these have labels, so we make them invisible */
 .studie-oppbygning input {
     display: none;
 }
 
 .studieaar {
-    display: flex;
     width: 100%;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     padding: 0;
 }
@@ -357,14 +364,14 @@ figure {
     justify-self: center;
 }
 
+/* The semester sections are divided by a bottom border */
 .semester {
-    display: flex;
     width: 100%;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 0;
-    padding-bottom: var(--24px);
+    gap: var(--16px);
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: var(--32px);
 }
 
 .semester:not(:last-child) {
@@ -372,6 +379,7 @@ figure {
     margin-bottom: 1rem;
 }
 
+/* All tables have same styling, even outside of studieoppbygning, we appply a fixed table layout, and makes sure all borders collapse */
 table {
     width: 100%;
     max-width: 100%;
@@ -379,51 +387,43 @@ table {
     table-layout: fixed;
     empty-cells: hide;
     color: var(--main-darker);
-    border: 1px solid var(--main-darker);
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: var(--main-darker);
     background-color: var(--main-light);
-}
-
-table li {
-    font-size: var(--24px);
 }
 
 td, th {
     padding: var(--16px);
-    border: 1px solid var(--main-normal);
-}
-
-table th {
-    background-color: var(--main-normal);
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: var(--main-normal);
+    word-wrap: break-word;
 }
 
 table thead {
+    background-color: var(--main-normal);
     text-align: left;
 }
 
-table tr {
-    border-bottom: 1px solid var(--main-normal);
-}
+/* give radio-groups in studieoppbygning good spacing */
 
-.button-group {
-    width: 80%;
+.radio-group {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: var(--24px);
     align-items: center;
-}
-
-.emnegruppe a, footer a {
     color: var(--main-dark);
-    text-decoration:  underline var(--main-light) ;
-    transition: text-decoration-color 400ms ease-in-out;
-    padding: auto;
 }
 
-.emnegruppe a:hover, footer a:hover{
-    text-decoration: underline var(--main-darker);
+.radio-group label {
+    font-weight: 800;
 }
 
-#forsteaar:target, #andreaar:target, #tredjeaar:target {
+
+/* This is the same technique used for the burger menu styling, radio has been used instead of checkbox
+The ids belong to a radio input button, when these are checked the proper view is displayed */
+#forste:checked ~ #forsteaar, #andre:checked ~ #andreaar, #tredje:checked ~ #tredjeaar {
     display: flex;
 }
 
@@ -445,20 +445,23 @@ table tr {
     display: none;
 }
 
+/* The footer has a three column grid style */
 footer {
     margin-top: 5rem;
     display: grid;
     grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    background-color: var(--main-light);
-    color: var(--main-darker);
-    border-radius: 2rem 2rem 0 0;
-    justify-content: center;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
     align-items: center;
     justify-items: center;
-
 }
 
+/* all other images have a border radius, so disabling for footer */
+footer img {
+    border-radius: 0;
+}
+
+/* the footer header spans the first row */
 .footer-header {
     grid-row: span 1;
     grid-column: span 3;
@@ -469,6 +472,7 @@ footer {
 
 }
 
+/* The main section utilizes the three columns style */
 .footer-main {
     grid-row: span 2;
     grid-column: span 3;
@@ -476,7 +480,7 @@ footer {
     width: 85%;
     justify-content: center;
     gap: 3rem;
-    grid-template-columns: repeat(3, 33%);
+    grid-template-columns: repeat(3, 1fr);
     margin-bottom: var(--24px);
 }
 
@@ -488,59 +492,51 @@ footer li {
     margin: var(--16px);
 }
 
+/* styling for activity page, we have changes the color-palette and use a card type of styling */
 body.activity {
     background-color: var(--activity-dark);
     font-family: 'Khand', sans-serif;
 }
 
 body.activity main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     color: var(--activity-light);
     width: 100%;
 }
 
 .activity main a {
     color: var(--activity-dark);
+    text-decoration: underline dotted var(--activity-light);
+    transition: text-decoration 400ms ease-in-out; 
+}
+
+.activity main a:hover {
     text-decoration: underline dotted var(--activity-dark);
 }
 
+/* adds spacing to cards */
 .activity .cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     column-gap: var(--24px);
     row-gap: var(--32px);
     padding: var(--24px);
 }
 
-.activity .container{
+/* each card is styled the same */
+.activity .card{
     background-color: var(--activity-light);
     color: var(--activity-darker);
     width: 100%;
     line-height: 1.5;
     border-radius: var(--24px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: var(--32px);
+    padding: var(--24px);
 }
 
-.activity .container section {
-    padding: 0;
-}
-
-.activity .container img {
-    border: solid var(--activity-dark) 0.2rem;
-    border-radius: 1.5rem;
+.activity .card img {
+    border-style: solid;
+    border-color: var(--activity-dark);
 }
 
 .activity header {
     color: var(--activity-light);
-}
-
-.activity .header-container {
-    justify-items: center;
 }
 
 .activity footer, .activity footer a {
@@ -548,17 +544,19 @@ body.activity main {
     color: var(--activity-dark);
 }
 
+/* slight difference in link styling */
 .activity footer a {
-    text-decoration:  underline dotted var(--activity-light) ;
+    text-decoration: underline dotted var(--activity-light); 
 }
 
 .activity footer a:hover {
     color: var(--activity-dark);
-    text-decoration:  underline dotted var(--activity-dark) ;
+    text-decoration: underline dotted var(--activity-darker); 
     transition: text-decoration-color 400ms ease-in-out;
     padding: auto;
 }
 
+/* buttons have different color schemes */
 .activity .button-primary {
     color: var(--activity-light);
     background-color: var(--activity-dark);
@@ -590,12 +588,12 @@ body.activity main {
 @media (max-width:47em){
 
     :root {
+        /* Changed sizes for smaller screens */
         --16px: 0.77rem;  /* Approx 12.32px (16px * 0.77) */
         --24px: 1.15rem;  /* 24px */
         --32px: 1.54rem;  /* Approx 24.64px (32px * 0.77) */
         --40px: 1.92rem;  /* Approx 30.72px (40px * 0.77) */
         --48px: 2.31rem;  /* Approx 36.96px (48px * 0.77) */
-        --300px: 14.31rem;
     }
 
     /* styling dropdown navbar menu. The menu is invisible when the toggle is unclicked */
@@ -606,11 +604,12 @@ body.activity main {
         display: none;
         left: 0;
         width: 100%;
-        background-color: var(--main-darker);;
+        background-color: var(--main-darker);
+        z-index: 1000;
     }
 
-    /* Adjusting link sizing */
-    .nav-items-wrapper a {
+    .activity .nav-items-wrapper {
+        background-color: var(--activity-dark);
     }
 
     /* justifying links for the dropdown navbar */
@@ -632,40 +631,40 @@ body.activity main {
     #burger-toggle:checked ~ .nav-items-wrapper {
         display: block;
     }
+    
+}
 
-    table {
-        empty-cells: hide;
+@media (max-width:47em), (min-width: 47em) and (max-width:63em) {
+    /* all columns are given a flex-direction column */
+    .footer-header, .radio-group, .column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: var(--32px);
     }
 
+    /* Making tables responsive */
+    /* Source for code: https://codepen.io/AllThingsSmitty/pen/MyqmdM */
     table thead tr {
         display: none;
     }
 
+    /* The table rows are now displayed in block, and not table */
     table tr {
         display: block;
     }
 
+    /* This will move the content of the table cell to the right */
     table td {
         font-size: var(--24px);
         text-align: right;
         display: block;
     }
 
+    /* data-label is made visible before td using pseudo-class before */
     table td::before {
-        font-size: var(--24px);
         content: attr(data-label);
         float: left;
         font-weight: bold;
-    }
-    
-
-}
-
-@media (max-width:47em), (min-width: 47em) and (max-width:63em) {
-    .footer-header, .footer-main, .article-box, .button-group, .column-2, .column-3, .activity .container, .activity .cards {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: var(--32px);
     }
 }
